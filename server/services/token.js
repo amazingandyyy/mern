@@ -10,7 +10,12 @@ module.exports = {
         }
         return jwt.encode(payload, config.secret);
     },
-    test: function(){
-        console.log('hello yo!')
+    verifyToken: function (token, cb) {
+        const decode = jwt.decode(token, config.secret)
+        if (!decode) {
+            return cb({error: 'Token is not verified.'})
+        }
+
+        cb(null, decode)
     }
 }
