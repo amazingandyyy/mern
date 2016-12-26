@@ -48,9 +48,9 @@ exports.signin = function (req, res, next) {
             .send({error: 'You must provide email and password.'});
     }
     User
-        .findOne({
-            email: email
-        }, function (err, existingUser) {
+        .findOne({email: email})
+        .select('+password')
+        .exec(function (err, existingUser) {
             if (err) {
                 return next(err)
             }

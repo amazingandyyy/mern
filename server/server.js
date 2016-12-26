@@ -18,6 +18,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', require('./routes/index'));
 
 // Server Setup
-const port = process.env.PORT || 8080
+const port = process.env.PORT || 8000
 http.createServer(app).listen(port);
 console.log(`Server listening on: ${port}`)
