@@ -27,8 +27,15 @@ userSchema.pre('save', function(next){
     })
 })
 
+userSchema.statics.comparedPassword = function(candidatePassword, cb) {
+    bcrypt.compare(candidatePassword, this.password, function(err, good){
+        if (err ) { return cb(err)};
+        cb(null, good);
+    })
+}
+
 // Create the model class
 const ModelClass = mongoose.model('User', userSchema);
 
 // Export the model
-module.exports = ModelClass
+module.exports = ModelClass;
