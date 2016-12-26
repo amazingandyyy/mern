@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const bodyParder = require('body-parser');
+const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
@@ -13,7 +13,8 @@ mongoose.connect(MONGOURL, err => {
 
 // App Setup
 app.use(morgan('dev'));
-app.use(bodyParder.json({type: '*/*'}));
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', require('./routes/index'));
 
 // Server Setup

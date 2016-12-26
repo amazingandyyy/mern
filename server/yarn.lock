@@ -21,6 +21,10 @@ basic-auth@~1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-1.0.4.tgz#030935b01de7c9b94a824b29f3fccb750d3a5290"
 
+bcrypt-nodejs:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/bcrypt-nodejs/-/bcrypt-nodejs-0.0.3.tgz#c60917f26dc235661566c681061c303c2b28842b"
+
 bluebird@2.10.2:
   version "2.10.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-2.10.2.tgz#024a5517295308857f14f91f1106fc3b555f446b"
@@ -186,6 +190,10 @@ ipaddr.js@1.1.1:
 isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
+
+jwt-simple:
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/jwt-simple/-/jwt-simple-0.5.1.tgz#79ea01891b61de6b68e13e67c0b4b5bda937b294"
 
 kareem@1.1.5:
   version "1.1.5"
