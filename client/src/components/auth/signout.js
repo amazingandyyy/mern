@@ -6,10 +6,6 @@ import * as actions from '../../actions';
 class Signout extends Component {
     componentWillMount() {
         this.props.signUserOut()
-        
-        setTimeout(function(){
-            browserHistory.push('/')
-        }, 3000)
     }
     render() {
         return (

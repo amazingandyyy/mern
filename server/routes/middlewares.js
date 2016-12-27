@@ -15,7 +15,7 @@ module.exports = {
         token.verifyToken(try_token, function (err, payload) {
             if (err) {
                 return res
-                    .status(404)
+                    .status(401)
                     .send(err);
             }
             User
