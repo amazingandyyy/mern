@@ -1,24 +1,27 @@
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import * as actions from '../../actions';
 
 class Signup extends Component {
-    renderAlert(){
-        if(this.props.errorMsg) {
+    renderAlert() {
+        if (this.props.errorMsg) {
             return (
                 <div className="alert alert-danger">
-                    <strong>Oops! </strong>{this.props.errorMsg}
+                    <strong>Oops!
+                    </strong>{this.props.errorMsg}
                 </div>
             )
         }
     }
-    handleFormSubmit(data) {
-        this.props.signUserIn(data)
+    handleFormSubmit({email, password}) {
+        if (data.password == data.password2) {
+            this.props.signUserUp({email, password});
+        }
     }
     render() {
         // console.log('this.props;: ', this.props);
-        const {handleSubmit} = this.props;
+        const {handleSubmit, password} = this.props;
         return (
             <div className="card card-block center-block">
                 <form
@@ -26,65 +29,72 @@ class Signup extends Component {
                     className="col-xs">
                     <h2>Sign Up</h2>
                     <div className="form-group">
-                        <label>Name</label>
+                        <label>Name:</label>
                         <Field
-                            type= 'email'
-                            name="text"
+                            name="name"
+                            type='text'
                             component="input"
                             className="form-control"
-                            placeholder="Andy"
-                            required
-                            />
+                            placeholder="Name"
+                            required/>
                     </div>
                     <div className="form-group">
-                        <label>Email</label>
+                        <label>Email:</label>
                         <Field
-                            type= 'email'
                             name="email"
+                            type='email'
                             component="input"
                             className="form-control"
-                            placeholder="email@email.com"
-                            required
-                            />
+                            placeholder="sample@email.com"
+                            required/>
                     </div>
                     <div className="form-group">
-                        <label>Email</label>
+                        <label>Password:</label>
                         <Field
-                            type= 'email'
-                            name="email2"
-                            component="input"
-                            className="form-control"
-                            placeholder="your email again"
-                            required
-                            />
-                    </div>
-                    <div className="form-group">
-                        <label>Password</label>
-                        <Field
-                            type= 'password'
+                            type='password'
                             name="password"
+                            {...password}
                             component="input"
                             className="form-control"
                             placeholder="your password"
                             required
-                            />
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <label>Comfirm Password:</label>
+                        <Field
+                            type='password'
+                            name="password2"
+                            component="input"
+                            className="form-control"
+                            placeholder="your password again"
+                            required/>
                     </div>
                     {this.renderAlert()}
-                    <button type="submit" className="btn btn-primary">Log Up</button>
+                    <button type="submit" className="btn btn-primary">Sign Up</button>
                 </form>
             </div>
         );
     }
 }
 
-function mapStateToProps({auth}) {
-    return {
-        errorMsg: auth.error
+function validate(formProps) {
+    const errors = {}
+    // console.log(formProps)
+    if(formProps.password !== formProps.password2){
+        errors.password = 'Password must match';
     }
+    return errors;
+}
+
+function mapStateToProps({auth}) {
+    return {errorMsg: auth.error}
 }
 
 Signup = reduxForm({
-    form: 'signup'
+    form: 'signup',
+    validate
 }, null, actions)(Signup);
 Signup = connect(mapStateToProps, actions)(Signup);
 

@@ -21,6 +21,23 @@ export function signUserIn({email, password}) {
     }
 }
 
+export function signUserUp({email, password}) {
+    return function (dispatch) {
+        // Submit email/password to server
+        axios
+            .post(`${ROOT_URL}/signup`, {email, password})
+            .then(res => {
+                browserHistory.push('/secret')
+                dispatch({type: AUTH_USER})
+                localStorage.setItem('token', res.data.token);
+            })
+            .catch(error => {
+                console.log(error);
+                dispatch({type: AUTH_ERROR, payload: 'Failed to Sign up, please try again.'})
+            });
+    }
+}
+
 export function signUserOut() {
     return function (dispatch) {
         dispatch({type: UNAUTH_USER})

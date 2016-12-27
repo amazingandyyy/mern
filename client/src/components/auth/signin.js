@@ -26,7 +26,7 @@ class Signin extends Component {
                     className="col-xs">
                     <h2>Sign In</h2>
                     <div className="form-group">
-                        <label>Email</label>
+                        <label>Email:</label>
                         <Field
                             type= 'email'
                             name="email"
@@ -37,7 +37,7 @@ class Signin extends Component {
                             />
                     </div>
                     <div className="form-group">
-                        <label>Password</label>
+                        <label>Password:</label>
                         <Field
                             type= 'password'
                             name="password"

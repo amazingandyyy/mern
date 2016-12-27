@@ -67,3 +67,10 @@ exports.signin = function (req, res, next) {
             }
         })
 }
+
+exports.checkToken = function (req, res, next) {
+    const token = req.params.token;
+    console.log('try this token: ', token)
+    next()
+}
+
