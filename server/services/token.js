@@ -8,10 +8,10 @@ module.exports = {
             sub: user.id,
             iat: timeStamp
         }
-        return jwt.encode(payload, config.secret);
+        return jwt.encode(payload, config.jwt_secret);
     },
     verifyToken: function (token, cb) {
-        const decode = jwt.decode(token, config.secret)
+        const decode = jwt.decode(token, config.jwt_secret)
         if (!decode) {
             return cb({error: 'Token is not verified.'})
         }

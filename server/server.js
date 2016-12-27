@@ -1,15 +1,23 @@
+require('dotenv').config();
+
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
+const config = require('./config');
 
 // DB Setup
-const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/auth'
-mongoose.connect(MONGOURL, err => {
+const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/auth';
+
+if(!config.jwt_secret){
+    console.error('No jwt secret. MongoDB is not connected')
+}else{
+    mongoose.connect(MONGOURL, err => {
         console.log(err || `Connected to MongoDB: ${MONGOURL}`);
     });
+}
 
 // App Setup
 app.use(morgan('dev'));
