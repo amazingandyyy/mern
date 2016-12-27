@@ -20,3 +20,10 @@ export function signUserIn({email, password}) {
             });
     }
 }
+
+export function signUserOut() {
+    return function (dispatch) {
+        dispatch({type: UNAUTH_USER})
+        localStorage.removeItem('token');
+    }
+}
