@@ -1,11 +1,11 @@
 body {
     padding-top: 80px;
+    background-color: rgba(0,0,0,0.05);
 }
 
 
 @media (max-width: 543px) {
     body {
-        padding-top: 110px;
     }
 }
 
