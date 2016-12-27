@@ -9,14 +9,16 @@ class Signup extends Component {
             return (
                 <div className="alert alert-danger">
                     <strong>Oops!
-                    </strong>{this.props.errorMsg}
+                    </strong> {this.props.errorMsg}
                 </div>
             )
         }
     }
-    handleFormSubmit({email, password}) {
+    handleFormSubmit(data) {
         if (data.password == data.password2) {
-            this.props.signUserUp({email, password});
+            this.props.signUserUp({name: data.name, email: data.email, password: data.password});
+        }else{
+            console.log('password does not matched');
         }
     }
     render() {
@@ -53,7 +55,6 @@ class Signup extends Component {
                         <Field
                             type='password'
                             name="password"
-                            {...password}
                             component="input"
                             className="form-control"
                             placeholder="your password"

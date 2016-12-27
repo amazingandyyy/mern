@@ -27,11 +27,12 @@ export function signUserIn({email, password}) {
     }
 }
 
-export function signUserUp({email, password}) {
+export function signUserUp(userObj) {
     return function (dispatch) {
         // Submit email/password to server
+        console.log('userObj: ', userObj)
         axios
-            .post(`/signup`, {email, password})
+            .post(`/signup`, userObj)
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('token', res.data.token);

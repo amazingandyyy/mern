@@ -12,7 +12,7 @@ const cors = require('cors')
 // DB Setup
 const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/auth';
 
-if(!config.jwt_secret || process.env.JWT_SECRET){
+if(!config.jwt_secret || !process.env.JWT_SECRET){
     console.error('No jwt secret. MongoDB is not connected')
 }else{
     mongoose.connect(MONGOURL, err => {

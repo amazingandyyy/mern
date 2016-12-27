@@ -4,6 +4,7 @@ const token = require('../services/token');
 const User = require('../models/user');
 
 exports.signup = function (req, res, next) {
+    const name = req.body.name;
     const email = req.body.email;
     const password = req.body.password;
 
@@ -24,7 +25,7 @@ exports.signup = function (req, res, next) {
                     .status(422)
                     .send({error: 'Email is in use'});
             }
-            const user = new User({email: email, password: password})
+            const user = new User({name: name, email: email, password: password})
 
             user.save(function (err, savedUser) {
                 if (err) {
