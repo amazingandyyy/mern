@@ -1,16 +1,15 @@
 {
-  "name": "redux-simple-starter",
+  "name": "mern-stack-FE",
   "version": "1.0.0",
   "description": "Simple starter package for Redux with React and Babel support",
   "main": "index.js",
-  "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "amazingandyyy",
+  "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.2.1",
     "babel-loader": "^6.2.0",
@@ -26,6 +25,7 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "babel-preset-stage-1": "^6.1.18",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
@@ -33,6 +33,7 @@
     "react-redux": "^4.0.0",
     "react-router": "^2.0.1",
     "redux": "^3.0.4",
-    "redux-form": "^6.4.1"
+    "redux-form": "^6.4.1",
+    "redux-thunk": "^2.1.0"
   }
 }

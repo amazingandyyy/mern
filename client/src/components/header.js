@@ -6,30 +6,24 @@ export default class Header extends Component {
         return (
             <nav
                 className="navbar navbar-fixed-top navbar-full navbar-dark bg-primary bg-faded">
-                <a className="navbar-brand" href="#">MERN</a>
+                <Link className="navbar-brand" to="/">MERN</Link>
                 <span  className="float-left">
                     <ul className="nav navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Section A</a>
+                            <Link className="nav-link" to="/public">Public</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Section B</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Section C</a>
+                            <Link className="nav-link" to="/secret">Secret</Link>
                         </li>
                     </ul>
                 </span>
                 <span className="float-right">
                     <ul className="nav navbar-nav">
                         <li className="nav-item active">
-                            <Link to="/signin" className="nav-link" href="#">Sign in</Link>
+                            <Link to="/signin" className="nav-link">Sign in</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Sign Up</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">Log Out</a>
+                            <Link to="/signup" className="nav-link">Sign Up</Link>
                         </li>
                     </ul>
                 </span>

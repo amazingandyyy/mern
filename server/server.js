@@ -7,6 +7,7 @@ const morgan = require('morgan');
 const app = express();
 const mongoose = require('mongoose');
 const config = require('./config');
+const cors = require('cors')
 
 // DB Setup
 const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/auth';
@@ -20,6 +21,7 @@ if(!config.jwt_secret){
 }
 
 // App Setup
+app.use(cors());
 app.use(morgan('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}));

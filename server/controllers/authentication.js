@@ -17,7 +17,7 @@ exports.signup = function (req, res, next) {
             email: email
         }, function (err, existingUser) {
             if (err) {
-                return next(err)
+                return res.status(422).send(err)
             }
             if (existingUser) {
                 return res
@@ -48,18 +48,18 @@ exports.signin = function (req, res, next) {
             .send({error: 'You must provide email and password.'});
     }
     User
-        .findOne({email: email})
-        .select('+password')
-        .exec(function (err, existingUser) {
-            if (err) {
-                return next(err)
+        .findOne({
+            email: email
+        }, function (err, existingUser) {
+            if (err || !existingUser) {
+                return res.status(401).send(err || {error: "User Not Found"})
             }
             if (existingUser) {
-                bcrypt
-                    .compare(password, existingUser.password, function (err, good) {
+                bcrypt.compare(password, existingUser.password, function (err, good) {
                         if (err || !good) {
-                            return res.send(err || 'User not found')
+                            return res.status(401).send(err || 'User not found')
                         }
+                        
                         res.send({
                             token: token.generateToken(existingUser)
                         })

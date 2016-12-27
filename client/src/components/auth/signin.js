@@ -1,9 +1,20 @@
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 
 class Signin extends Component {
+    renderAlert(){
+        if(this.props.errorMsg) {
+            return (
+                <div className="alert alert-danger">
+                    <strong>Oops! </strong>{this.props.errorMsg}
+                </div>
+            )
+        }
+    }
     handleFormSubmit(data) {
-        console.log(data)
+        this.props.signUserIn(data)
     }
     render() {
         // console.log('this.props;: ', this.props);
@@ -36,11 +47,23 @@ class Signin extends Component {
                             required
                             />
                     </div>
+                    {this.renderAlert()}
                     <button type="submit" className="btn btn-primary">Sign in</button>
                 </form>
             </div>
         );
     }
-
 }
-export default reduxForm({form: 'signin'})(Signin);
+
+function mapStateToProps({auth}) {
+    return {
+        errorMsg: auth.error
+    }
+}
+
+Signin = reduxForm({
+    form: 'signin'
+}, null, actions)(Signin);
+Signin = connect(mapStateToProps, actions)(Signin);
+
+export default Signin;
