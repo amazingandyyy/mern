@@ -8,7 +8,6 @@ $ git clone https://github.com/amazingandyyy/mern-stack
 
 # Usage(make it run on your machine)
 ### Client-side usage(PORT: 8080)
-I am sure you need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
 ```terminal
 $ cd client
 $ yarn
@@ -16,6 +15,8 @@ $ npm run dev
 ```
 
 ### Server-side usage(PORT: 8000)
+(I am sure you need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
+)
 ```terminal
 $ cd server
 $ yarn
@@ -33,8 +34,8 @@ react-dom: ^0.14.3 | express: ^4.14.0
 react-redux: ^4.0.0 | jwt-simple: ^0.5.1
 react-router: ^2.0.1 | mongoose: ^4.7.4
 redux: ^3.0.4 | morgan: ^1.7.0
-redux-form: ^6.4.1
-redux-thunk: ^2.1.0
+redux-form: ^6.4.1 |
+redux-thunk: ^2.1.0 |
 
 ## BUGs or comments
 [Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
