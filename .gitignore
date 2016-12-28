@@ -2,12 +2,10 @@
 bundle.js
 npm-debug.log
 
-# IntelliJ
-*.iml
 /.idea
 /public
-.DS_Store
 
 .env
 config.js
 .passport.js
+.DS_Store
