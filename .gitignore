@@ -6,3 +6,8 @@ npm-debug.log
 *.iml
 /.idea
 /public
+.DS_Store
+
+.env
+config.js
+.passport.js
