@@ -39,14 +39,14 @@ redux-thunk: ^2.1.0 |
 
 # Screemshots of this project
 
+User visit public and Home page
 ![User visit public and Home page](http://i.imgur.com/ORCGHHY.png)
-User visit public and Home page↑
 
+User can sign in or sign up
 ![User can sign in or sign up](http://i.imgur.com/rrmbU5I.png)
-User can sign in or sign up↑
 
+After signing in user can go to secret route and make request to token-protected API endpoint
 ![After signing in user can go to secret route](http://i.imgur.com/FzLB51u.png)
-After signing in user can go to secret route and make request to token-protected API endpoint↑
 
 ## BUGs or comments
 [Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
