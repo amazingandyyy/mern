@@ -1,5 +1,3 @@
-const bcrypt = require('bcrypt-nodejs')
-
 const token = require('../services/token');
 const User = require('../models/user');
 
@@ -56,15 +54,15 @@ exports.signin = function (req, res, next) {
                 return res.status(401).send(err || {error: "User Not Found"})
             }
             if (existingUser) {
-                bcrypt.compare(password, existingUser.password, function (err, good) {
-                        if (err || !good) {
+                existingUser.comparedPassword(password, function(err, good) {
+                    if (err || !good) {
                             return res.status(401).send(err || 'User not found')
                         }
-                        
+
                         res.send({
                             token: token.generateToken(existingUser)
                         })
-                    })
+                })
             }
         })
 }
