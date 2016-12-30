@@ -28,6 +28,7 @@ userSchema.pre('save', function(next){
     })
 })
 
+// Make use of methods for comparedPassword
 userSchema.methods.comparedPassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, good){
         if (err ) { return cb(err)};
