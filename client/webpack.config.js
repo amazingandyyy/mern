@@ -1,29 +1,25 @@
-var webpack = require('webpack');
-var path = require('path');
-var fs = require('fs');
+// var webpack = require('webpack');
+// var path = require('path');
+// var fs = require('fs');
 
-var nodeModules = {};
-fs.readdirSync('node_modules')
-  .filter(function(x) {
-    return ['.bin'].indexOf(x) === -1;
-  })
-  .forEach(function(mod) {
-    nodeModules[mod] = 'commonjs ' + mod;
-  });
+// var nodeModules = {};
+// fs.readdirSync('node_modules')
+//   .filter(function(x) {
+//     return ['.bin'].indexOf(x) === -1;
+//   })
+//   .forEach(function(mod) {
+//     nodeModules[mod] = 'commonjs ' + mod;
+//   });
 
 module.exports = {
-  externals: nodeModules,
+  // externals: nodeModules,
   entry: [
     './src/index.js'
   ],
-  target: 'node',
   output: {
     path: __dirname,
     publicPath: '/',
     filename: '/bundle.js'
-  },
-  sassLoader: {
-    includePaths: [path.resolve(__dirname, './sass')]
   },
   module: {
     loaders: [{
