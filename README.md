@@ -3,7 +3,7 @@ MongoDB, Express, React/Redux, Node
 
 ## clone or download and send me PR(please)
 ```terminal
-$ git clone https://github.com/amazingandyyy/mern-stack
+$ git clone https://github.com/amazingandyyy/mern-stack.git
 ```
 
 # Usage(make it run on your machine)
