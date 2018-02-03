@@ -16,7 +16,7 @@ export function signUserIn({email, password}) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
-                // browserHistory.push('/secret')
+                location.href = '/#secret';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
@@ -35,7 +35,7 @@ export function signUserUp(userObj) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
-                // browserHistory.push('/secret')
+                location.href = '/#secret';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
@@ -47,13 +47,12 @@ export function signUserUp(userObj) {
 
 export function signUserOut() {
     return function (dispatch) {
-        location.href = '/';
         dispatch({type: UNAUTH_USER})
         localStorage.removeItem('auth_jwt_token');
     }
 }
 
-export function fetchInfo() {
+export function tryConnect() {
     return function (dispatch) {
         axios
             .get(`/api`)
@@ -64,8 +63,8 @@ export function fetchInfo() {
                 })
             })
             .catch(error => {
-                signUserOut()(dispatch);
-                // console.log(error.response.data);
+                // signUserOut()(dispatch);
+                console.log(error.response.data);
             });
     }
 }

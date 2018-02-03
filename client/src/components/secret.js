@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import * as actions from '../actions';
+import {tryConnect} from '../actions';
 
 class Secret extends Component {
   componentWillMount() {
-    this.props.fetchInfo()
+    this.props.tryConnect();
   }
   render() {
     return (
@@ -16,4 +16,4 @@ class Secret extends Component {
   }
 }
 
-export default connect(({auth}) => {return {status: auth.status} }, actions)(Secret);
+export default connect(({auth}) => {return {status: auth.status} }, {tryConnect})(Secret);
