@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export default function(ComposedComponent) {
   class Authentication extends Component {
-    static contextTypes = {
-      router: React.PropTypes.object
-    }
-
     componentWillMount() {
       if (!this.props.authenticated) {
         this.context.router.push('/signin');
@@ -26,7 +23,9 @@ export default function(ComposedComponent) {
 
   function mapStateToProps({auth}) {
     return { authenticated: auth.authenticated };
+  } 
+  Authentication.contextTypes = {
+    router: PropTypes.object
   }
-
   return connect(mapStateToProps)(Authentication);
 }
