@@ -12434,9 +12434,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__actions_types__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__style_style_scss__ = __webpack_require__(376);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__style_style_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_16__style_style_scss__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__style_bootstrap_scss__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__style_bootstrap_scss___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_17__style_bootstrap_scss__);
-
 
 
 
@@ -12486,7 +12483,7 @@ __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODU
       )
     )
   )
-), document.querySelector('.container'));
+), document.getElementById('root'));
 
 /***/ }),
 /* 198 */
@@ -12534,7 +12531,11 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       'div',
       null,
       __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__header__["a" /* default */], null),
-      this.props.children
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'cointainer' },
+        this.props.children
+      )
     );
   }
 }
@@ -12591,16 +12592,20 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     render() {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'nav',
-            {
-                className: 'navbar navbar-fixed-top navbar-full navbar-dark bg-primary bg-faded' },
+            { className: 'navbar navbar-expand-sm navbar-dark bg-primary' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["NavLink"],
                 { className: 'navbar-brand', to: '/' },
                 'MERN'
             ),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'span',
-                { className: 'float-left' },
+                'button',
+                { className: 'navbar-toggler', type: 'button', 'data-toggle': 'collapse', 'data-target': '#navbarNav', 'aria-controls': 'navbarNav', 'aria-expanded': 'false', 'aria-label': 'Toggle navigation' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'navbar-toggler-icon' })
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'collapse navbar-collapse', id: 'navbarNav' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'ul',
                     { className: 'nav navbar-nav' },
@@ -12622,11 +12627,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                             'Account'
                         )
                     )
-                )
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'span',
-                { className: 'float-right' },
+                ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'ul',
                     { className: 'nav navbar-nav' },
@@ -12798,58 +12799,70 @@ class Signin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         const { handleSubmit } = this.props;
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'card card-block center-block' },
+            { className: 'row' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-sm-3' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'form',
-                {
-                    onSubmit: handleSubmit(this.handleFormSubmit.bind(this)),
-                    className: 'col-xs' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'h2',
-                    null,
-                    'Sign In'
-                ),
+                'div',
+                { className: 'col-sm-6' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'form-group' },
+                    { className: 'card' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        'Email:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
-                        type: 'email',
-                        name: 'email',
-                        component: 'input',
-                        className: 'form-control',
-                        placeholder: 'email@email.com',
-                        required: true
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        'Password:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
-                        type: 'password',
-                        name: 'password',
-                        component: 'input',
-                        className: 'form-control',
-                        placeholder: 'your password',
-                        required: true
-                    })
-                ),
-                this.renderAlert(),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { type: 'submit', className: 'btn btn-primary' },
-                    'Sign in'
+                        'div',
+                        { className: 'card-body' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'form',
+                            { onSubmit: handleSubmit(this.handleFormSubmit.bind(this)) },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h2',
+                                null,
+                                'Sign In'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'label',
+                                    null,
+                                    'Email:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
+                                    type: 'email',
+                                    name: 'email',
+                                    component: 'input',
+                                    className: 'form-control',
+                                    placeholder: 'email@email.com',
+                                    required: true
+                                })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'label',
+                                    null,
+                                    'Password:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
+                                    type: 'password',
+                                    name: 'password',
+                                    component: 'input',
+                                    className: 'form-control',
+                                    placeholder: 'your password',
+                                    required: true
+                                })
+                            ),
+                            this.renderAlert(),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'button',
+                                { type: 'submit', className: 'btn btn-primary' },
+                                'Sign in'
+                            )
+                        )
+                    )
                 )
-            )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-sm-3' })
         );
     }
 }
@@ -21127,92 +21140,104 @@ class Signup extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     }
     render() {
         // console.log('this.props;: ', this.props);
-        const { handleSubmit, password } = this.props;
+        const { handleSubmit } = this.props;
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'div',
-            { className: 'card card-block center-block' },
+            { className: 'row' },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-sm-3' }),
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'form',
-                {
-                    onSubmit: handleSubmit(this.handleFormSubmit.bind(this)),
-                    className: 'col-xs' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'h2',
-                    null,
-                    'Sign Up'
-                ),
+                'div',
+                { className: 'col-sm-6' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'form-group' },
+                    { className: 'card' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        'Name:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
-                        name: 'name',
-                        type: 'text',
-                        component: 'input',
-                        className: 'form-control',
-                        placeholder: 'Name',
-                        required: true })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        'Email:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
-                        name: 'email',
-                        type: 'email',
-                        component: 'input',
-                        className: 'form-control',
-                        placeholder: 'sample@email.com',
-                        required: true })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        'Password:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
-                        type: 'password',
-                        name: 'password',
-                        component: 'input',
-                        className: 'form-control',
-                        placeholder: 'your password',
-                        required: true
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'form-group' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'label',
-                        null,
-                        'Comfirm Password:'
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
-                        type: 'password',
-                        name: 'password2',
-                        component: 'input',
-                        className: 'form-control',
-                        placeholder: 'your password again',
-                        required: true })
-                ),
-                this.renderAlert(),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'button',
-                    { type: 'submit', className: 'btn btn-primary' },
-                    'Sign Up'
+                        'div',
+                        { className: 'card-body' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                            'form',
+                            { onSubmit: handleSubmit(this.handleFormSubmit.bind(this)) },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'h2',
+                                null,
+                                'Sign Up'
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'label',
+                                    null,
+                                    'Name:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
+                                    name: 'name',
+                                    type: 'text',
+                                    component: 'input',
+                                    className: 'form-control',
+                                    placeholder: 'Name',
+                                    required: true })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'label',
+                                    null,
+                                    'Email:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
+                                    name: 'email',
+                                    type: 'email',
+                                    component: 'input',
+                                    className: 'form-control',
+                                    placeholder: 'sample@email.com',
+                                    required: true })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'label',
+                                    null,
+                                    'Password:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
+                                    type: 'password',
+                                    name: 'password',
+                                    component: 'input',
+                                    className: 'form-control',
+                                    placeholder: 'your password',
+                                    required: true
+                                })
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'form-group' },
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'label',
+                                    null,
+                                    'Comfirm Password:'
+                                ),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_redux_form__["a" /* Field */], {
+                                    type: 'password',
+                                    name: 'password2',
+                                    component: 'input',
+                                    className: 'form-control',
+                                    placeholder: 'your password again',
+                                    required: true })
+                            ),
+                            this.renderAlert(),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'button',
+                                { type: 'submit', className: 'btn btn-primary' },
+                                'Sign Up'
+                            )
+                        )
+                    )
                 )
-            )
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-sm-3' })
         );
     }
 }
@@ -21384,12 +21409,6 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 
 /***/ }),
 /* 376 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 377 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
