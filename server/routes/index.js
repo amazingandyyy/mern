@@ -1,12 +1,12 @@
-const express = require('express');
-const router = express.Router();
+import Authentication from '../controllers/authentication';
+import Middlewares from './middlewares';
+import api from './api';
 
-const Authentication = require('../controllers/authentication');
-const middlewares = require('./middlewares');
+const router = require('express').Router();
 
-router.use('/api', middlewares.loginRequired, require('./api'));
+router.use('/api', Middlewares.loginRequired, api);
 router.post('/signup', Authentication.signup);
 router.post('/signin', Authentication.signin);
 router.post('/checkToken/:token', Authentication.checkToken);
 
-module.exports = router;
+export default router;

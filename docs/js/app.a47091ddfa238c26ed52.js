@@ -2547,8 +2547,8 @@ const axios = __webpack_require__(178);
 const ROOT_URL = 'http://localhost:8000';
 
 axios.defaults.baseURL = ROOT_URL;
-if (localStorage.getItem('token')) {
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+if (localStorage.getItem('auth_jwt_token')) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
 }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -2557,9 +2557,9 @@ function signUserIn({ email, password }) {
         // Submit email/password to server
         axios.post(`/signin`, { email, password }).then(res => {
             dispatch({ type: __WEBPACK_IMPORTED_MODULE_0__types__["b" /* AUTH_USER */] });
-            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('auth_jwt_token', res.data.token);
             // browserHistory.push('/secret')
-            axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+            axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
         }).catch(error => {
             console.log(error);
             dispatch({ type: __WEBPACK_IMPORTED_MODULE_0__types__["a" /* AUTH_ERROR */], payload: 'Bad Login Info' });
@@ -2573,9 +2573,9 @@ function signUserUp(userObj) {
         console.log('userObj: ', userObj);
         axios.post(`/signup`, userObj).then(res => {
             dispatch({ type: __WEBPACK_IMPORTED_MODULE_0__types__["b" /* AUTH_USER */] });
-            localStorage.setItem('token', res.data.token);
+            localStorage.setItem('auth_jwt_token', res.data.token);
             // browserHistory.push('/secret')
-            axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+            axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
         }).catch(error => {
             console.log(error);
             dispatch({ type: __WEBPACK_IMPORTED_MODULE_0__types__["a" /* AUTH_ERROR */], payload: 'Failed to Sign up, please try again.' });
@@ -2586,7 +2586,7 @@ function signUserUp(userObj) {
 function signUserOut() {
     return function (dispatch) {
         dispatch({ type: __WEBPACK_IMPORTED_MODULE_0__types__["d" /* UNAUTH_USER */] });
-        localStorage.removeItem('token');
+        localStorage.removeItem('auth_jwt_token');
     };
 }
 
@@ -10019,7 +10019,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 const createStoreWithMiddleware = Object(__WEBPACK_IMPORTED_MODULE_3_redux__["applyMiddleware"])(__WEBPACK_IMPORTED_MODULE_5_redux_thunk___default.a)(__WEBPACK_IMPORTED_MODULE_3_redux__["createStore"]);
 const store = createStoreWithMiddleware(__WEBPACK_IMPORTED_MODULE_14__reducers__["a" /* default */]);
-const token = localStorage.getItem('token');
+const token = localStorage.getItem('auth_jwt_token');
 
 // if we have a token, consider the user to be signed in
 if (token) {

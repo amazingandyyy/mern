@@ -1,11 +1,8 @@
-const express = require('express');
-const router = express.Router();
-
-const middlewares = require('./middlewares');
+const router = require('express').Router();
 
 router.get('/', function(req, res){
     console.log(req.user)
-    res.send({status: 'connected'})
+    res.send({status: 'connected'});
 })
 
-module.exports = router;
+export default router;

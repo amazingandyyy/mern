@@ -1,10 +1,10 @@
-const axios = require('axios');
+import axios from 'axios';
 import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, TRY_CONNECT } from './types';
 const ROOT_URL = 'http://localhost:8000';
 
 axios.defaults.baseURL = ROOT_URL;
-if (localStorage.getItem('token')) {
-    axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+if (localStorage.getItem('auth_jwt_token')) {
+    axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
 }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
@@ -15,9 +15,9 @@ export function signUserIn({email, password}) {
             .post(`/signin`, {email, password})
             .then(res => {
                 dispatch({type: AUTH_USER})
-                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('auth_jwt_token', res.data.token);
                 // browserHistory.push('/secret')
-                axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+                axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
                 console.log(error);
@@ -34,9 +34,9 @@ export function signUserUp(userObj) {
             .post(`/signup`, userObj)
             .then(res => {
                 dispatch({type: AUTH_USER})
-                localStorage.setItem('token', res.data.token);
+                localStorage.setItem('auth_jwt_token', res.data.token);
                 // browserHistory.push('/secret')
-                axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
+                axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
                 console.log(error);
@@ -47,8 +47,9 @@ export function signUserUp(userObj) {
 
 export function signUserOut() {
     return function (dispatch) {
+        location.href = '/';
         dispatch({type: UNAUTH_USER})
-        localStorage.removeItem('token');
+        localStorage.removeItem('auth_jwt_token');
     }
 }
 
@@ -63,7 +64,8 @@ export function fetchInfo() {
                 })
             })
             .catch(error => {
-                console.log(error.response.data);
+                signUserOut()(dispatch);
+                // console.log(error.response.data);
             });
     }
 }

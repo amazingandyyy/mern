@@ -4,9 +4,7 @@ import * as actions from '../actions';
 
 class Secret extends Component {
   componentWillMount() {
-    this
-      .props
-      .fetchInfo()
+    this.props.fetchInfo()
   }
   render() {
     return (
