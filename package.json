@@ -1,6 +1,6 @@
 {
   "name": "mern-stack",
-  "version": "1.5.1",
+  "version": "2.0.0",
   "description": "MongoDB, Express, React/Redux, Node",
   "main": "index.js",
   "scripts": {
