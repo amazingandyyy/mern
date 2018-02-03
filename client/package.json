@@ -27,23 +27,23 @@
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "serve": "^6.1.0",
-    "style-loader": "^0.18.2",
+    "style-loader": "^0.20.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
     "webpack-merge": "^4.1.0"
   },
   "dependencies": {
-    "axios": "^0.15.3",
+    "axios": "^0.17.1",
     "babel-preset-stage-1": "^6.1.18",
     "electron": "^1.4.13",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-redux": "^4.0.0",
+    "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-form": "^6.4.1",
+    "redux-form": "^7.2.3",
     "redux-thunk": "^2.1.0"
   }
 }
