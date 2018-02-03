@@ -17,7 +17,6 @@ import reducers from './reducers';
 import { AUTH_USER } from './actions/types';
 
 import '../style/style.scss'
-import '../style/bootstrap.scss'
 
 const createStoreWithMiddleware = applyMiddleware(reduxThunk)(createStore);
 const store = createStoreWithMiddleware(reducers)
@@ -42,4 +41,4 @@ ReactDOM.render(
       </App>
     </HashRouter>
   </Provider>
-  , document.querySelector('.container'));
+  , document.getElementById('root'));

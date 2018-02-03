@@ -1,6 +1,14 @@
 body {
-    padding-top: 80px;
     background-color: rgba(0,0,0,0.05);
+    .cointainer {
+      padding: 10px;
+    }
+    nav {
+        .navbar-toggler {
+            outline: none;
+            border: none;   
+        }
+    }
 }
 
 
@@ -10,8 +18,5 @@ body {
 }
 
 @media (min-width: 767px) { 
-    .center-block {
-        max-width: 500px;
-        margin: auto;
-    }
+    
  }

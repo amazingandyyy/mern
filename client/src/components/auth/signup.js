@@ -23,58 +23,64 @@ class Signup extends Component {
     }
     render() {
         // console.log('this.props;: ', this.props);
-        const {handleSubmit, password} = this.props;
+        const {handleSubmit} = this.props;
         return (
-            <div className="card card-block center-block">
-                <form
-                    onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}
-                    className="col-xs">
-                    <h2>Sign Up</h2>
-                    <div className="form-group">
-                        <label>Name:</label>
-                        <Field
-                            name="name"
-                            type='text'
-                            component="input"
-                            className="form-control"
-                            placeholder="Name"
-                            required/>
+            <div className='row'>
+                <div className="col-sm-3"></div>
+                <div className="col-sm-6">
+                    <div className='card'>
+                        <div className="card-body">
+                    <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                        <h2>Sign Up</h2>
+                        <div className="form-group">
+                            <label>Name:</label>
+                            <Field
+                                name="name"
+                                type='text'
+                                component="input"
+                                className="form-control"
+                                placeholder="Name"
+                                required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Email:</label>
+                            <Field
+                                name="email"
+                                type='email'
+                                component="input"
+                                className="form-control"
+                                placeholder="sample@email.com"
+                                required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Password:</label>
+                            <Field
+                                type='password'
+                                name="password"
+                                component="input"
+                                className="form-control"
+                                placeholder="your password"
+                                required
+                            />
+                        </div>
+                        
+                        <div className="form-group">
+                            <label>Comfirm Password:</label>
+                            <Field
+                                type='password'
+                                name="password2"
+                                component="input"
+                                className="form-control"
+                                placeholder="your password again"
+                                required/>
+                        </div>
+                        {this.renderAlert()}
+                        <button type="submit" className="btn btn-primary">Sign Up</button>
+                    </form>
                     </div>
-                    <div className="form-group">
-                        <label>Email:</label>
-                        <Field
-                            name="email"
-                            type='email'
-                            component="input"
-                            className="form-control"
-                            placeholder="sample@email.com"
-                            required/>
                     </div>
-                    <div className="form-group">
-                        <label>Password:</label>
-                        <Field
-                            type='password'
-                            name="password"
-                            component="input"
-                            className="form-control"
-                            placeholder="your password"
-                            required
-                        />
-                    </div>
-                    
-                    <div className="form-group">
-                        <label>Comfirm Password:</label>
-                        <Field
-                            type='password'
-                            name="password2"
-                            component="input"
-                            className="form-control"
-                            placeholder="your password again"
-                            required/>
-                    </div>
-                    {this.renderAlert()}
-                    <button type="submit" className="btn btn-primary">Sign Up</button>
-                </form>
+                </div>
+                <div className="col-sm-3"></div>
             </div>
         );
     }
