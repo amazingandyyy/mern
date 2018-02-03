@@ -45,8 +45,8 @@ User visit public and Home page
 User can sign in or sign up
 ![User can sign in or sign up](http://i.imgur.com/rrmbU5I.png)
 
-After signing in user can go to secret route and make request to token-protected API endpoint
-![After signing in user can go to secret route](http://i.imgur.com/FzLB51u.png)
+After signing in user can go to account route and make request to token-protected API endpoint
+![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
 
 ## BUGs or comments
 [Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)

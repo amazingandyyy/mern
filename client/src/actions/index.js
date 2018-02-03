@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, TRY_CONNECT } from './types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, TRY_CONNECT, GET_USER_PROFILE } from './types';
 const ROOT_URL = 'http://localhost:8000';
 
 axios.defaults.baseURL = ROOT_URL;
@@ -16,7 +16,7 @@ export function signUserIn({email, password}) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
-                location.href = '/#secret';
+                location.href = '/#account';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
@@ -35,7 +35,7 @@ export function signUserUp(userObj) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);
-                location.href = '/#secret';
+                location.href = '/#account';
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
             })
             .catch(error => {
@@ -59,12 +59,22 @@ export function tryConnect() {
             .then(res => {
                 dispatch({
                     type: TRY_CONNECT,
-                    payload: res.data.status
+                    payload: res.data
                 })
             })
-            .catch(error => {
-                // signUserOut()(dispatch);
-                console.log(error.response.data);
-            });
+            .catch(error => console.log(error.response.data));
+    }
+}
+export function getUserProfile() {
+    return function (dispatch) {
+        axios
+            .get(`/api/userProfile`)
+            .then(res => {
+                dispatch({
+                    type: GET_USER_PROFILE,
+                    payload: res.data
+                })
+            })
+            .catch(error => console.log(error.response.data));
     }
 }

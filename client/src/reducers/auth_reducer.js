@@ -15,6 +15,7 @@ export default function(state={}, action) {
             return { ...state, error: action.payload}
         case TRY_CONNECT:
             return { ...state, status: action.payload}
+        default:
+            return state
     }
-    return state;
 }

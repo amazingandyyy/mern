@@ -35,7 +35,7 @@ class Header extends Component {
                             <NavLink className="nav-link" to="/public">Public</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/secret">Secret</NavLink>
+                            <NavLink className="nav-link" to="/account">Account</NavLink>
                         </li>
                     </ul>
                 </span>

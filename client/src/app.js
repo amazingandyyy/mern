@@ -8,7 +8,7 @@ import reduxThunk from 'redux-thunk';
 import App from './components/app';
 import Home from './components/home';
 import Public from './components/public';
-import Secret from './components/secret';
+import Account from './components/account';
 import Signin from './components/auth/signin';
 import Signup from './components/auth/signup';
 import Signout from './components/auth/signout'
@@ -34,7 +34,7 @@ ReactDOM.render(
         <Switch>
           <Route exact path="/" component= {Home} />
           <Route path="/public" component= {Public} />
-          <Route path="/secret" component= {RequireAuth(Secret)} />
+          <Route path="/account" component= {RequireAuth(Account)} />
           <Route path="/signin" component= {Signin} />
           <Route path="/signup" component= {Signup} />
           <Route path="/signout" component= {Signout} />
