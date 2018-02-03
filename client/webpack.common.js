@@ -6,7 +6,10 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         app: './src/app.js',
-        vender: ['react', 'react-dom', 'redux', 'react-redux', 'react-router']
+        vender: [ 
+            'react', 'react-dom', 'redux', 
+            'react-redux', 'react-router-dom', 
+            'axios', 'prop-types' ]
     },
     output: {
         path: path.resolve(__dirname, '../docs/'),

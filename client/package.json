@@ -6,7 +6,7 @@
   "scripts": {
     "start": "serve ../docs",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "rm -rf ../docs && webpack --progress -p --config webpack.prod.js"
+    "build": "rm -rf ../docs && webpack --config webpack.prod.js"
   },
   "author": "amazingandyyy",
   "license": "MIT",
@@ -34,8 +34,6 @@
   },
   "dependencies": {
     "axios": "^0.17.1",
-    "babel-preset-stage-1": "^6.1.18",
-    "electron": "^1.4.13",
     "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
