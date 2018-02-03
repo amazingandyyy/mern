@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
 
 import App from './components/app';
@@ -29,15 +29,17 @@ if (token) {
 }
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={browserHistory}>
-      <Route path="/" component= {App}>
-        <IndexRoute component= {Home} />
-        <Route path="/public" component= {Public} />
-        <Route path="/secret" component= {RequireAuth(Secret)} />
-        <Route path="/signin" component= {Signin} />
-        <Route path="/signup" component= {Signup} />
-        <Route path="/signout" component= {Signout} />
-      </Route>
-    </Router>
+    <HashRouter hashType="noslash">
+      <App>
+        <Switch>
+          <Route exact path="/" component= {Home} />
+          <Route path="/public" component= {Public} />
+          <Route path="/secret" component= {RequireAuth(Secret)} />
+          <Route path="/signin" component= {Signin} />
+          <Route path="/signup" component= {Signup} />
+          <Route path="/signout" component= {Signout} />
+        </Switch>
+      </App>
+    </HashRouter>
   </Provider>
   , document.querySelector('.container'));

@@ -6,13 +6,13 @@ export default function(ComposedComponent) {
   class Authentication extends Component {
     componentWillMount() {
       if (!this.props.authenticated) {
-        this.context.router.push('/signin');
+        this.context.router.history.push('/signin');
       }
     }
 
     componentWillUpdate(nextProps) {
       if (!nextProps.authenticated) {
-        this.context.router.push('/signin');
+        this.context.router.history.push('/signin');
       }
     }
 
@@ -23,9 +23,10 @@ export default function(ComposedComponent) {
 
   function mapStateToProps({auth}) {
     return { authenticated: auth.authenticated };
-  } 
+  }
   Authentication.contextTypes = {
     router: PropTypes.object
   }
+
   return connect(mapStateToProps)(Authentication);
 }

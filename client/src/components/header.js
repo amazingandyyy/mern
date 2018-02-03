@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
-import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     renderSignButton(){
         if (this.props.authenticated){
             return (
                 <li className="nav-item">
-                    <Link className="nav-link" to="/signout">Sign out</Link>
+                    <NavLink className="nav-link" to="/signout">Sign out</NavLink>
                 </li>
             )
         }else{
             return (
                 [
                     <li className="nav-item active" key="1">
-                        <Link to="/signin" className="nav-link">Sign in</Link>
+                        <NavLink to="/signin" className="nav-link">Sign in</NavLink>
                     </li>,
                     <li className="nav-item" key="2">
-                        <Link to="/signup" className="nav-link">Sign Up</Link>
+                        <NavLink to="/signup" className="nav-link">Sign Up</NavLink>
                     </li>
                 ]
             )
@@ -28,14 +28,14 @@ class Header extends Component {
         return (
             <nav
                 className="navbar navbar-fixed-top navbar-full navbar-dark bg-primary bg-faded">
-                <Link className="navbar-brand" to="/">MERN</Link>
+                <NavLink className="navbar-brand" to="/">MERN</NavLink>
                 <span  className="float-left">
                     <ul className="nav navbar-nav">
                         <li className="nav-item">
-                            <Link className="nav-link" to="/public">Public</Link>
+                            <NavLink className="nav-link" to="/public">Public</NavLink>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/secret">Secret</Link>
+                            <NavLink className="nav-link" to="/secret">Secret</NavLink>
                         </li>
                     </ul>
                 </span>

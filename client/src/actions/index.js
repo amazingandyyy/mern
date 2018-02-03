@@ -1,6 +1,5 @@
 const axios = require('axios');
-import {browserHistory} from 'react-router';
-import {AUTH_USER, UNAUTH_USER, AUTH_ERROR, TRY_CONNECT} from './types';
+import { AUTH_USER, UNAUTH_USER, AUTH_ERROR, TRY_CONNECT } from './types';
 const ROOT_URL = 'http://localhost:8000';
 
 axios.defaults.baseURL = ROOT_URL;
@@ -17,7 +16,7 @@ export function signUserIn({email, password}) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('token', res.data.token);
-                browserHistory.push('/secret')
+                // browserHistory.push('/secret')
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
             })
             .catch(error => {
@@ -36,7 +35,7 @@ export function signUserUp(userObj) {
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('token', res.data.token);
-                browserHistory.push('/secret')
+                // browserHistory.push('/secret')
                 axios.defaults.headers.common['Authorization'] = localStorage.getItem('token');
             })
             .catch(error => {

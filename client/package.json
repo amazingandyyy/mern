@@ -38,11 +38,11 @@
     "electron": "^1.4.13",
     "lodash": "^3.10.1",
     "prop-types": "^15.6.0",
-    "react": "^0.14.3",
-    "react-dom": "^0.14.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
     "react-redux": "^4.0.0",
-    "react-router": "^2.0.1",
-    "redux": "^3.0.4",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
     "redux-form": "^6.4.1",
     "redux-thunk": "^2.1.0"
   }
