@@ -31,7 +31,6 @@ ReactDOM.render(
         <IndexRoute component= {Home} />
         <Route path="/public" component= {Public} />
         <Route path="/secret" component= {RequireAuth(Secret)} />
-
         <Route path="/signin" component= {Signin} />
         <Route path="/signup" component= {Signup} />
         <Route path="/signout" component= {Signout} />
