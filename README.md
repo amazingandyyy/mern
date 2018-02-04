@@ -1,9 +1,9 @@
-# revieweer
+# mern-stack
 MongoDB, Express, React/Redux, Node
 
 ## clone or download and send me PR(please)
 ```terminal
-$ git clone https://github.com/amazingandyyy/revieweer.git
+$ git clone https://github.com/amazingandyyy/mern-stack.git
 ```
 
 # Usage(make it run on your machine)
@@ -49,7 +49,7 @@ After signing in user can go to account route and make request to token-protecte
 ![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
 
 ## BUGs or comments
-[Create new Issues](https://github.com/amazingandyyy/revieweer/issues)
+[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
 
 ## Author
 [Amazingandyyy](amazingandyyy.github.io)

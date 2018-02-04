@@ -3,7 +3,7 @@ React/Redux
 
 ## clone or download and send me PR(please)
 ```terminal
-$ git clone https://github.com/amazingandyyy/revieweer
+$ git clone https://github.com/amazingandyyy/mern-stack
 ```
 
 # Usage(make it run on your machine)
@@ -38,7 +38,7 @@ After signing in user can go to account page and make request to token-protected
 ![After signing in user can go to account page](http://i.imgur.com/FzLB51u.png)
 
 ## BUGs or comments
-[Create new Issues](https://github.com/amazingandyyy/revieweer/issues)
+[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
 
 ## Author
 [Amazingandyyy](amazingandyyy.github.io)

@@ -3,7 +3,7 @@ MongoDB, Express, Node
 
 ## clone or download and send me PR(please)
 ```terminal
-$ git clone https://github.com/amazingandyyy/revieweer
+$ git clone https://github.com/amazingandyyy/mern-stack
 ```
 
 ### Server-side usage(PORT: 8000)
@@ -28,7 +28,7 @@ $ npm run dev
 | morgan: ^1.7.0
 
 ## BUGs or comments
-[Create new Issues](https://github.com/amazingandyyy/revieweer/issues)
+[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
 
 ## Author
 [Amazingandyyy](amazingandyyy.github.io)
