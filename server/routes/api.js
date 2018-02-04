@@ -1,3 +1,5 @@
+import Authentication from '../controllers/authentication';
+
 const router = require('express').Router();
 
 router.get('/', (req, res)=>{
@@ -8,8 +10,6 @@ router.get('/userProfile', (req, res)=>{
     res.send(req.user);
 })
 
-router.post('/userProfile', (req, res)=>{
-    res.send(req.user);
-})
+router.post('/userProfile', Authentication.updateProfile)
 
 export default router;

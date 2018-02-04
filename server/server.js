@@ -1,4 +1,3 @@
-require('dotenv').config();
 
 import express from 'express';
 import http from 'http';
@@ -8,6 +7,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import routers from './routes';
 
+require('dotenv').config();
 const app = express();
 
 // DB Setup
@@ -21,6 +21,7 @@ if(!process.env.JWT_SECRET){
     mongoose.connect(MONGOURL, err => {
         console.log(err || `Connected to MongoDB: ${MONGOURL}`);
     });
+    mongoose.Promise = global.Promise;
 }
 
 // App Setup
@@ -29,6 +30,11 @@ app.use(morgan('dev'));
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/', routers);
+
+app.use((err, req, res, next) => {
+    console.log('Error:', err.message);
+    res.status(422).json(err.message);
+});
 
 // Server Setup
 const port = process.env.PORT || 8000

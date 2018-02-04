@@ -14,9 +14,7 @@ export default {
             .findOne({
                 email: email
             }, function (err, existingUser) {
-                if (err) {
-                    return res.status(422).send(err)
-                }
+                if (err) return res.status(422).send(err);
                 if (existingUser) {
                     return res
                         .status(422)
@@ -74,16 +72,25 @@ export default {
     },
 
     updateProfile: (req, res, next) => {
-        const userId = req.user._id;
-        const oldProfile = req.user;
-        const newProfile = req.body;
-
-        delete newProfile.email;
-        delete newProfile.phone;
-        delete newProfile.password;
-
-        User.findByIdAndUpdate(userId, {...oldProfile, newProfile}, (err, newUser)=>{
-            console.log(newUser);
+        req.user.comparedPassword(req.body.password, (err, good) => {
+            if (err || !good) return res.status(401).send(err || 'Incorrect Password')
+            const userId = req.user._id;
+            const newProfile = {
+                name: {
+                    first: req.body.firstName, 
+                    last: req.body.lastName
+                }
+            };
+            delete newProfile.email;
+            delete newProfile.phone;
+            delete newProfile.password;
+            
+            User.findByIdAndUpdate(userId, newProfile, {new: true})
+            .then(newUser=>{
+                console.log('newUser', newUser);
+                res.sendStatus(200);
+            })
+            .catch(next)
         })
     }
     

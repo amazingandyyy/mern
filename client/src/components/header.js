@@ -14,7 +14,7 @@ class Header extends Component {
         }else{
             return (
                 [
-                    <li className="nav-item active" key="1">
+                    <li className="nav-item" key="1">
                         <NavLink to="/signin" className="nav-link">Sign in</NavLink>
                     </li>,
                     <li className="nav-item" key="2">

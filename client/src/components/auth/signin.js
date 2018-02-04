@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import { connect } from 'react-redux';
 import {signUserIn} from '../../actions';
-
+import CenterCard363 from '../centerCard363';
 class Signin extends Component {
     renderAlert(){
         if(this.props.errorMsg) {
@@ -13,27 +13,27 @@ class Signin extends Component {
             )
         }
     }
-    handleFormSubmit(data) {
-        this.props.signUserIn(data)
+    handleFormSubmit(d) {
+        this.props.signUserIn(d)
     }
     render() {
         // console.log('this.props;: ', this.props);
         const {handleSubmit} = this.props;
         return (
-                <div className="row">
-                <div className="col-sm-3"></div>
-                <div className="col-sm-6">
+                <CenterCard363>
                     <div className='card'>
+                    <h4 className="card-header">
+                        Sign In
+                    </h4>
                         <div className="card-body">
                         <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                            <h2>Sign In</h2>
                             <div className="form-group">
                                 <label>Email:</label>
                                 <Field
                                     type= 'email'
                                     name="email"
                                     component="input"
-                                    className="form-control"
+                                    className="form-control form-control-lg"
                                     placeholder="email@email.com"
                                     required
                                     />
@@ -44,19 +44,19 @@ class Signin extends Component {
                                     type= 'password'
                                     name="password"
                                     component="input"
-                                    className="form-control"
+                                    className="form-control form-control-lg"
                                     placeholder="your password"
                                     required
                                     />
                             </div>
                             {this.renderAlert()}
-                            <button type="submit" className="btn btn-primary">Sign in</button>
+                            <div style={{'paddingTop': '30px'}}>
+                                <button type="submit" className="btn btn-lg btn-primary btn-block">Sign in</button>
+                            </div>
                         </form>
                         </div>
                     </div>
-                </div>
-                <div className="col-sm-3"></div>
-                </div>
+                </CenterCard363>
         );
     }
 }
