@@ -12653,7 +12653,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                 { className: 'collapse navbar-collapse', id: 'navbarNav' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'ul',
-                    { className: 'nav navbar-nav' },
+                    { className: 'navbar-nav mr-auto' },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'li',
                         { className: 'nav-item' },
@@ -12675,7 +12675,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'ul',
-                    { className: 'nav navbar-nav' },
+                    { className: 'navbar-nav' },
                     this.renderSignButton()
                 )
             )

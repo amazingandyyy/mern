@@ -32,7 +32,7 @@ class Header extends Component {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="navbarNav">
-                    <ul className="nav navbar-nav">
+                    <ul className="navbar-nav mr-auto">
                         <li className="nav-item">
                             <NavLink className="nav-link" to="/public">Public</NavLink>
                         </li>
@@ -40,7 +40,7 @@ class Header extends Component {
                             <NavLink className="nav-link" to="/account">Account</NavLink>
                         </li>
                     </ul>
-                    <ul className="nav navbar-nav">
+                    <ul className="navbar-nav">
                         {this.renderSignButton()}
                     </ul>
                 </div>
