@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import { connect } from 'react-redux';
-import * as actions from '../../actions';
+import {signUserIn} from '../../actions';
 
 class Signin extends Component {
     renderAlert(){
@@ -67,9 +67,6 @@ function mapStateToProps({auth}) {
     }
 }
 
-Signin = reduxForm({
+export default connect(mapStateToProps, {signUserIn})(reduxForm({
     form: 'signin'
-}, null, actions)(Signin);
-Signin = connect(mapStateToProps, actions)(Signin);
-
-export default Signin;
+})(Signin));

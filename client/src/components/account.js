@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {reduxForm, Field} from 'redux-form';
 import {tryConnect, getUserProfile} from '../actions';
 
 class Account extends Component {
@@ -9,25 +10,40 @@ class Account extends Component {
   }
   render() {
     let {status, profile} = this.props;
-    console.log(profile);
     return (
       <div>
         <h1>Account</h1>
         <p className="text-muted">Server status: {status} ☀</p>
         <hr/>
-        <div>{profile && profile.name.first} {profile && profile.name.last}</div>
-        <div>{profile && profile.email}</div>
-        <div>{profile && profile._id}</div>
+        {profile && this.renderProfile(profile)}
       </div>
     );
   }
+  renderProfile(profile){
+    return (<div>
+        <div>{profile.name.first && profile.name.first} {profile.name.last && profile.name.last}</div>
+        <div>{profile.email && profile.email}</div>
+        <div>{profile._id && profile._id}</div>
+    </div>)
+  }
+  renderProfileForm(profile){
+    return (<div>
+        <div>{profile.name.first && profile.name.first} {profile.name.last && profile.name.last}</div>
+        <div>{profile.email && profile.email}</div>
+        <div>{profile._id && profile._id}</div>
+    </div>)
+  }
 }
 
-function mapPropToState({auth, user}) {
+
+function mapStateToProps({auth, user}) {
   return {
       status: auth.status,
       profile: user.profile
   }
 }
 
-export default connect(mapPropToState, {tryConnect, getUserProfile})(Account);
+
+export default connect(mapStateToProps, {tryConnect, getUserProfile})(reduxForm({
+  form: 'profileUpdate',
+})(Account));

@@ -12,13 +12,19 @@ const userSchema = new mongoose.Schema({
         unique: true,
         lowercase: true
     },
+    emailVerified: {
+        type: Boolean,
+        default: false
+    },
     password: String,
     phone: {
         number: {
-            type: String,
-            unique: true
+            type: String
         },
-        verifies: Boolean
+        verified: {
+            type: Boolean,
+            default: false
+        }
     }
 })
 

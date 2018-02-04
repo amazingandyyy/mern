@@ -22,7 +22,14 @@ export default {
                         .status(422)
                         .send({error: 'Email is in use'});
                 }
-                const user = new User({email, password, name: {first: firstName, last: lastName}})
+                const user = new User({
+                    name: {
+                        first: firstName, 
+                        last: lastName
+                    },
+                    email: email,
+                    password: password
+                })
     
                 user.save(function (err, savedUser) {
                     if (err) {

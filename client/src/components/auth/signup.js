@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {reduxForm, Field} from 'redux-form';
 import {connect} from 'react-redux';
-import * as actions from '../../actions';
+import {signUserUp} from '../../actions';
 
 class Signup extends Component {
     renderAlert(error) {
@@ -98,7 +98,6 @@ class Signup extends Component {
 
 function validate(formProps) {
     const errors = {}
-    // console.log(formProps)
     if(formProps.password !== formProps.password2){
         errors.password = 'Password must match';
     }
@@ -106,13 +105,12 @@ function validate(formProps) {
 }
 
 function mapStateToProps({auth}) {
-    return {errorMsg: auth.error}
+    return {
+        errorMsg: auth.error
+    }
 }
 
-Signup = reduxForm({
+export default connect(mapStateToProps, {signUserUp})(reduxForm({
     form: 'signup',
-    validate
-}, null, actions)(Signup);
-Signup = connect(mapStateToProps, actions)(Signup);
-
-export default Signup;
+    validate 
+})(Signup));
