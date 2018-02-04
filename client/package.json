@@ -1,7 +1,7 @@
 {
-  "name": "mern-stack-client",
+  "name": "revieweer-client",
   "version": "1.0.1",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "www.revieweer.com",
   "main": "index.js",
   "scripts": {
     "start": "serve ../docs",
@@ -9,7 +9,7 @@
     "build": "rm -rf ../docs && webpack --config webpack.prod.js"
   },
   "author": "amazingandyyy",
-  "license": "MIT",
+  "license": "private",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

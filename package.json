@@ -1,5 +1,5 @@
 {
-  "name": "mern-stack",
+  "name": "revieweer",
   "version": "2.0.1",
   "description": "CRUD in MongoDB, Express, React/Redux, Node",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/amazingandyyy/mern-stack.git"
+    "url": "git+https://github.com/amazingandyyy/revieweer.git"
   },
   "keywords": [
     "react"
@@ -18,9 +18,9 @@
   "author": "Amazingandyyy <amazingandyyy@gmail.com> (Andy Chen)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/amazingandyyy/mern-stack/issues"
+    "url": "https://github.com/amazingandyyy/revieweer/issues"
   },
-  "homepage": "https://github.com/amazingandyyy/mern-stack#readme",
+  "homepage": "https://github.com/amazingandyyy/revieweer#readme",
   "devDependencies": {
     "eslint": "^4.14.0",
     "eslint-config-logux": "^17.0.0",

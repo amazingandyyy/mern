@@ -1,5 +1,5 @@
 {
-  "name": "mern-stack-server",
+  "name": "revieweer-server",
   "version": "1.0.1",
   "description": "",
   "main": "server.js",
@@ -7,7 +7,7 @@
     "dev": "babel-watch server.js"
   },
   "author": "amazingandyyy",
-  "license": "MIT",
+  "license": "private",
   "dependencies": {
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.15.2",
