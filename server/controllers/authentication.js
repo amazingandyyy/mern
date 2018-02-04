@@ -3,9 +3,7 @@ import User from '../models/user';
 
 export default {
     signup : (req, res, next) => {
-        const name = req.body.name;
-        const email = req.body.email;
-        const password = req.body.password;
+        const { email, password, firstName, lastName } = req.body;
     
         if (!email || !password) {
             return res
@@ -24,7 +22,7 @@ export default {
                         .status(422)
                         .send({error: 'Email is in use'});
                 }
-                const user = new User({name: name, email: email, password: password})
+                const user = new User({email, password, name: {first: firstName, last: lastName}})
     
                 user.save(function (err, savedUser) {
                     if (err) {
@@ -67,11 +65,19 @@ export default {
                 }
             })
     },
-    
-    checkToken: (req, res, next) => {
-        const token = req.params.token;
-        console.log('try this token: ', token)
-        next()
+
+    updateProfile: (req, res, next) => {
+        const userId = req.user._id;
+        const oldProfile = req.user;
+        const newProfile = req.body;
+
+        delete newProfile.email;
+        delete newProfile.phone;
+        delete newProfile.password;
+
+        User.findByIdAndUpdate(userId, {...oldProfile, newProfile}, (err, newUser)=>{
+            console.log(newUser);
+        })
     }
     
 }

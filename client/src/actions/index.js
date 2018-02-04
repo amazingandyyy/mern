@@ -8,11 +8,11 @@ if (localStorage.getItem('auth_jwt_token')) {
 }
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-export function signUserIn({email, password}) {
+export function signUserIn(data) {
     return function (dispatch) {
         // Submit email/password to server
         axios
-            .post(`/signin`, {email, password})
+            .post(`/signin`, data)
             .then(res => {
                 dispatch({type: AUTH_USER})
                 localStorage.setItem('auth_jwt_token', res.data.token);

@@ -4,25 +4,25 @@ import {connect} from 'react-redux';
 import * as actions from '../../actions';
 
 class Signup extends Component {
-    renderAlert() {
+    renderAlert(error) {
+        let errorMsg = error || this.props.errorMsg
         if (this.props.errorMsg) {
             return (
                 <div className="alert alert-danger">
                     <strong>Oops!
-                    </strong> {this.props.errorMsg}
+                    </strong> {errorMsg}
                 </div>
             )
         }
     }
     handleFormSubmit(data) {
         if (data.password == data.password2) {
-            this.props.signUserUp({name: data.name, email: data.email, password: data.password});
+            this.props.signUserUp(data);
         }else{
-            console.log('password does not matched');
+            this.renderAlert('password does not matched');
         }
     }
     render() {
-        // console.log('this.props;: ', this.props);
         const {handleSubmit} = this.props;
         return (
             <div className='row'>
@@ -33,13 +33,23 @@ class Signup extends Component {
                     <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
                         <h2>Sign Up</h2>
                         <div className="form-group">
-                            <label>Name:</label>
+                            <label>First name:</label>
                             <Field
-                                name="name"
+                                name="firstName"
                                 type='text'
                                 component="input"
                                 className="form-control"
-                                placeholder="Name"
+                                placeholder="First Name"
+                                required/>
+                        </div>
+                        <div className="form-group">
+                            <label>Last name:</label>
+                            <Field
+                                name="lastName"
+                                type='text'
+                                component="input"
+                                className="form-control"
+                                placeholder="Last Name"
                                 required/>
                         </div>
                         <div className="form-group">

@@ -10,13 +10,13 @@ export default {
     token.verifyToken(try_token, (err, payload) => {
       if (err) return res.status(401).send(err);
       User.findById(payload.sub)
-        .exec(function (err, user) {
+        .exec((err, user) => {
           if (err || !user) {
               return res.status(404).send(err || {
                   error: 'middleware User not found!!!'
               });
           }
-          user.password = null;
+          delete user.password;
           req.user = user;
           next();
         })

@@ -13,9 +13,9 @@ class Account extends Component {
     return (
       <div>
         <h1>Account</h1>
-        <p className="text-muted">Status: {status}☀</p>
+        <p className="text-muted">Server status: {status} ☀</p>
         <hr/>
-        <div>{profile && profile.name}</div>
+        <div>{profile && profile.name.first} {profile && profile.name.last}</div>
         <div>{profile && profile.email}</div>
         <div>{profile && profile._id}</div>
       </div>

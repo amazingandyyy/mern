@@ -3,13 +3,23 @@ import bcrypt from 'bcrypt-nodejs';
 
 // Define the model
 const userSchema = new mongoose.Schema({
-    name: String,
+    name: {
+        first: String,
+        last: String,
+    },
     email: {
         type: String,
         unique: true,
         lowercase: true
     },
-    password: String
+    password: String,
+    phone: {
+        number: {
+            type: String,
+            unique: true
+        },
+        verifies: Boolean
+    }
 })
 
 userSchema.pre('save', function(next){
