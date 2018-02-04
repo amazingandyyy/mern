@@ -3252,7 +3252,7 @@ function signUserIn(data) {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
         }).catch(error => {
             console.log(error);
-            dispatch({ type: __WEBPACK_IMPORTED_MODULE_1__types__["a" /* AUTH_ERROR */], payload: 'Bad Login Info' });
+            dispatch({ type: __WEBPACK_IMPORTED_MODULE_1__types__["a" /* AUTH_ERROR */], payload: 'Server Error, try later.' });
         });
     };
 }
@@ -3267,7 +3267,7 @@ function signUserUp(userObj) {
             __WEBPACK_IMPORTED_MODULE_0_axios___default.a.defaults.headers.common['Authorization'] = localStorage.getItem('auth_jwt_token');
         }).catch(error => {
             console.log(error);
-            dispatch({ type: __WEBPACK_IMPORTED_MODULE_1__types__["a" /* AUTH_ERROR */], payload: 'Failed to Sign up, please try again.' });
+            dispatch({ type: __WEBPACK_IMPORTED_MODULE_1__types__["a" /* AUTH_ERROR */], payload: 'Server Error, try later.' });
         });
     };
 }
@@ -12637,7 +12637,7 @@ class Header extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     render() {
         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
             'nav',
-            { className: 'navbar navbar-expand-sm navbar-dark bg-primary' },
+            { className: 'navbar navbar-expand-sm navbar-light bg-light' },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 __WEBPACK_IMPORTED_MODULE_3_react_router_dom__["NavLink"],
                 { className: 'navbar-brand', to: '/' },
@@ -12815,7 +12815,7 @@ class Account extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         { className: 'form-group' },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'button',
-          { disabled: !dirty, type: 'submit', className: 'btn-lg btn btn-primary btn-block' },
+          { disabled: !dirty, type: 'submit', className: 'btn-lg btn btn-light btn-block' },
           'Save Change'
         ),
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
@@ -21185,7 +21185,7 @@ class Signin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
         if (this.props.errorMsg) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { className: 'alert alert-danger' },
+                { className: 'alert alert-warning' },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'strong',
                     null,
@@ -21258,7 +21258,7 @@ class Signin extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                             { style: { 'paddingTop': '30px' } },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
-                                { type: 'submit', className: 'btn btn-lg btn-primary btn-block' },
+                                { type: 'submit', className: 'btn btn-lg btn-light btn-block' },
                                 'Sign in'
                             )
                         )
@@ -21426,7 +21426,7 @@ class Signup extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
                             { style: { 'paddingTop': '30px' } },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'button',
-                                { type: 'submit', className: 'btn btn-lg btn-primary btn-block' },
+                                { type: 'submit', className: 'btn btn-lg btn-light btn-block' },
                                 'Sign Up'
                             )
                         )

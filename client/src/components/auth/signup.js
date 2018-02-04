@@ -87,7 +87,7 @@ class Signup extends Component {
                     </div>
                     {this.renderAlert()}
                     <div style={{'paddingTop': '30px'}}>
-                        <button type="submit" className="btn btn-lg btn-primary btn-block">Sign Up</button>
+                        <button type="submit" className="btn btn-lg btn-light btn-block">Sign Up</button>
                     </div>
                 </form>
                 </div>

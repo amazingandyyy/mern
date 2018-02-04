@@ -7,7 +7,7 @@ class Signin extends Component {
     renderAlert(){
         if(this.props.errorMsg) {
             return (
-                <div className="alert alert-danger">
+                <div className="alert alert-warning">
                     <strong>Oops! </strong>{this.props.errorMsg}
                 </div>
             )
@@ -51,7 +51,7 @@ class Signin extends Component {
                             </div>
                             {this.renderAlert()}
                             <div style={{'paddingTop': '30px'}}>
-                                <button type="submit" className="btn btn-lg btn-primary btn-block">Sign in</button>
+                                <button type="submit" className="btn btn-lg btn-light btn-block">Sign in</button>
                             </div>
                         </form>
                         </div>

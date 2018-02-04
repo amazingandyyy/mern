@@ -29,7 +29,7 @@ export function signUserIn(data) {
             })
             .catch(error => {
                 console.log(error);
-                dispatch({type: AUTH_ERROR, payload: 'Bad Login Info'})
+                dispatch({type: AUTH_ERROR, payload: 'Server Error, try later.'})
             });
     }
 }
@@ -47,7 +47,7 @@ export function signUserUp(userObj) {
             })
             .catch(error => {
                 console.log(error);
-                dispatch({type: AUTH_ERROR, payload: 'Failed to Sign up, please try again.'})
+                dispatch({type: AUTH_ERROR, payload: 'Server Error, try later.'})
             });
     }
 }
