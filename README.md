@@ -7,6 +7,13 @@ $ git clone https://github.com/amazingandyyy/mern-stack.git
 ```
 
 # Usage(make it run on your machine)
+- You need make the both the following two run
+
+## prerequirement
+- [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
+- [Node](https://nodejs.org/en/download/) ^8.0.0
+- [npm](https://nodejs.org/en/download/package-manager/)
+
 ### Client-side usage(PORT: 8088)
 ```terminal
 $ cd client
@@ -15,7 +22,7 @@ $ npm run dev
 ```
 
 ### Server-side usage(PORT: 8000)
-(I am sure you need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
+(You need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
 )
 ```terminal
 $ cd server
