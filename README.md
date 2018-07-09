@@ -44,7 +44,7 @@ redux: ^3.7.2 | morgan: ^1.7.0
 redux-form: ^6.4.1 |
 redux-thunk: ^2.1.0 |
 
-# Screemshots of this project
+# Screenshots of this project
 
 User visit public and Home page
 ![User visit public and Home page](http://i.imgur.com/ORCGHHY.png)
