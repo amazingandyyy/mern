@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "babel-watch src/server.js",
     "start": "NODE_ENV=production node dist/server.js",
+    "postinstall": "npm run build",
     "build": "rm -rf ./dist && NPM_CONFIG_PRODUCTION=false babel -d ./dist ./src -s",
     "heroku:add": "heroku git:remote -a",
     "heroku:deploy": "cd .. && git subtree push --prefix server/dist heroku master && cd ./server"
