@@ -4,9 +4,10 @@ import api from './api';
 
 const router = require('express').Router();
 
-router.get('/ping', (req, res) => res.send('pong'))
 router.use('/api', Middlewares.loginRequired, api);
 router.post('/signup', Authentication.signup);
 router.post('/signin', Authentication.signin);
+router.get('/ping', (req, res) => res.send('pong'))
+router.get('/', (req, res) => res.send('Open source here: https://github.com/amazingandyyy/mern-stack'))
 
 export default router;
