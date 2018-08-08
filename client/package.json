@@ -26,7 +26,7 @@
     "husky": "^0.14.3",
     "node-sass": "^4.9.2",
     "sass-loader": "^6.0.6",
-    "serve": "^6.1.0",
+    "serve": "^9.4.0",
     "style-loader": "^0.20.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2",
