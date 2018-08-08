@@ -6,7 +6,8 @@
   "scripts": {
     "test": "eslint --fix src/",
     "precommit": "npm test",
-    "prepush": "npm test"
+    "prepush": "npm test",
+    "deploy:heroku":"git subtree push --prefix server heroku master"
   },
   "repository": {
     "type": "git",
