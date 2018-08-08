@@ -15,7 +15,7 @@ $ npm i
 $ npm run dev
 ```
 ### Deploy to Heroku
-docs is [here](https://github.com/amazingandyyy/mern-stack)
+docs is [here](https://github.com/amazingandyyy/mern-stack#deploy-server-to-heroku)
 
 # Dependencies(tech-stack)
 | Server-side
