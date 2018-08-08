@@ -18,7 +18,8 @@ $ npm run dev
 ### Deploy to [Heroku](https://dashboard.heroku.com/)
 ```terminal
 heroku create
-npm run 
+npm run heroku:add <your-heroku-app-name>
+npm run deploy:heroku
 ```
 
 
