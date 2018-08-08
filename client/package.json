@@ -4,8 +4,8 @@
   "description": "Simple starter package for Redux with React and Babel support",
   "main": "index.js",
   "scripts": {
-    "start": "serve ../docs",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "start": "serve ../docs",
     "build": "rm -rf ../docs && webpack --config webpack.prod.js"
   },
   "author": "amazingandyyy",

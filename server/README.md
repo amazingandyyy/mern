@@ -15,6 +15,13 @@ $ npm i
 $ npm run dev
 ```
 
+### Deploy to [Heroku](https://dashboard.heroku.com/)
+```terminal
+heroku create
+
+```
+
+
 # Dependencies(tech-stack)
 | Server-side
 | ---

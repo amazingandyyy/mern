@@ -87,7 +87,6 @@ export default {
             
             User.findByIdAndUpdate(userId, newProfile, {new: true})
             .then(newUser=>{
-                console.log('newUser', newUser);
                 res.sendStatus(200);
             })
             .catch(next)

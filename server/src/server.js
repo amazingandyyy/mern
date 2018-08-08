@@ -6,23 +6,19 @@ import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import routers from './routes';
+import config from './config';
 
-require('dotenv').config();
+if(!process.env.JWT_SECRET) {
+    const err = Error('No JWT_SECRET in env variable');
+    throw err;
+}
+
 const app = express();
 
-// DB Setup
-const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/auth';
+mongoose.connect(config.mongoose.uri, { useMongoClient: true })
+.catch(err=>console.error(err));
 
-if(!process.env.JWT_SECRET){
-    mongoose.connect(MONGOURL, err => {
-        console.error(err || `[WARNING] Connected to MongoDB: ${MONGOURL} with a explicited jwt_secret ---> please create a .env file and set a implicited JWT_SECRET`);
-    });
-}else{
-    mongoose.connect(MONGOURL, err => {
-        console.log(err || `Connected to MongoDB: ${MONGOURL}`);
-    });
-    mongoose.Promise = global.Promise;
-}
+mongoose.Promise = global.Promise;
 
 // App Setup
 app.use(cors());

@@ -8,7 +8,7 @@ import {
     UPDATE_USER_PROFILE_GOOD,
     UPDATE_USER_PROFILE_FAIL 
 } from './types';
-const ROOT_URL = 'http://localhost:8000';
+const ROOT_URL = process.env.API_URI || 'http://localhost:8000';
 
 axios.defaults.baseURL = ROOT_URL;
 if (localStorage.getItem('auth_jwt_token')) {
