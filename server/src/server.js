@@ -9,8 +9,8 @@ import routers from './routes';
 import config from './config';
 
 if(!process.env.JWT_SECRET) {
-    const err = Error('No JWT_SECRET in env variable');
-    throw err;
+    const err = new Error('No JWT_SECRET in env variable');
+    console.error(err);
 }
 
 const app = express();
