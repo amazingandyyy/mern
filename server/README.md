@@ -14,14 +14,8 @@ $ cd server
 $ npm i
 $ npm run dev
 ```
-
-### Deploy to [Heroku](https://dashboard.heroku.com/)
-```terminal
-heroku create
-npm run heroku:add <your-heroku-app-name>
-npm run deploy:heroku
-```
-
+### Deploy to Heroku
+docs is [here](https://github.com/amazingandyyy/mern-stack)
 
 # Dependencies(tech-stack)
 | Server-side
