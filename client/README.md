@@ -7,7 +7,7 @@ $ git clone https://github.com/amazingandyyy/mern-stack
 ```
 
 # Usage(make it run on your machine)
-### Client-side usage(PORT: 8088)
+### Client-side usage(PORT: 3000)
 ```terminal
 $ cd client
 $ npm i

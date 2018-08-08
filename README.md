@@ -14,7 +14,7 @@ $ git clone https://github.com/amazingandyyy/mern-stack.git
 - [Node](https://nodejs.org/en/download/) ^8.0.0
 - [npm](https://nodejs.org/en/download/package-manager/)
 
-### Client-side usage(PORT: 8088)
+### Client-side usage(PORT: 3000)
 ```terminal
 $ cd client
 $ npm i
