@@ -1,11 +1,11 @@
 {
   "name": "mern-stack-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "server.js",
   "scripts": {
     "dev": "babel-watch src/server.js",
-    "start": "NODE_ENV=production node dist/server.js",
+    "start": "cross-env NODE_ENV=production node dist/server.js",
     "postinstall": "npm run build",
     "build": "rm -rf ./dist && NPM_CONFIG_PRODUCTION=false babel -d ./dist ./src -s"
   },
@@ -15,6 +15,7 @@
     "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.15.2",
     "cors": "^2.8.1",
+    "cross-env": "^5.2.0",
     "dotenv": "^2.0.0",
     "express": "^4.16.2",
     "jwt-simple": "^0.5.1",
