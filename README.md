@@ -1,5 +1,5 @@
 # mern-stack
-MongoDB, Express, React/Redux, Node
+MongoDB, Expressjs, React/Redux, Nodejs
 
 ## clone or download and send me PR(please)
 ```terminal
@@ -9,19 +9,19 @@ $ git clone https://github.com/amazingandyyy/mern-stack.git
 # Usage(make it run on your machine)
 - You need make the both the following two run
 
-## prerequirement
+## Prerequirements
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
 - [Node](https://nodejs.org/en/download/) ^8.0.0
 - [npm](https://nodejs.org/en/download/package-manager/)
 
-### Client-side usage(PORT: 3000)
+## Client-side usage(PORT: 3000)
 ```terminal
 $ cd client
 $ npm i
 $ npm run dev
 ```
 
-### Server-side usage(PORT: 8000)
+## Server-side usage(PORT: 8000)
 (You need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
 )
 ```terminal
@@ -30,7 +30,7 @@ $ npm i
 $ npm run dev
 ```
 
-### Deploy Server to [Heroku](https://dashboard.heroku.com/)
+## Deploy Server to [Heroku](https://dashboard.heroku.com/)
 ```terminal
 $ npm i -g heroku
 $ heroku login
@@ -39,7 +39,7 @@ $ npm run heroku:add <your-heroku-app-name>
 $ npm run deploy:heroku
 ```
 
-# Dependencies(tech-stack)
+# Dependencies(tech-stacks)
 Client-side | Server-side
 --- | ---
 axios: ^0.15.3 | bcrypt-nodejs: ^0.0.3
@@ -68,9 +68,7 @@ After signing in user can go to account route and make request to token-protecte
 [Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
 
 ## Author
-[Amazingandyyy](amazingandyyy.github.io)
-- Feel free to find me on _[GitHub](https://github.com/amazingandyyy)_ and _[LiveCoding](https://www.livecoding.tv/amazingandyyy/)_
-- or visit my _[page](http://amazingandyyy.github.io/)_
+[Amazingandyyy](https://amazingandyyy.com)
 
 ### License
 [MIT](https://github.com/amazingandyyy/eventbrite-api/blob/master/LICENSE)
