@@ -53,7 +53,7 @@ run the script at the first level:
 $ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
 ```
 
-### start
+### Start
 
 ```terminal
 $ cd server   // go to server folder
