@@ -7,8 +7,7 @@ $ git clone https://github.com/amazingandyyy/mern-stack
 ```
 
 ### Server-side usage(PORT: 8000)
-(I am sure you need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
-)
+(I am sure you need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for [instructions](https://github.com/amazingandyyy/mern-stack#prepare-your-secret))
 ```terminal
 $ cd server
 $ npm i
