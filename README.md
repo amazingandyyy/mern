@@ -68,8 +68,15 @@ $ npm i -g heroku
 $ heroku login
 ...
 $ heroku create
-$ npm run heroku:add <the-super-amazing-heroku-app-name>
+$ npm run heroku:add <your-super-amazing-heroku-app>
 $ npm run deploy:heroku
+```
+
+### After creating heroku
+
+remember to update the file of [client/webpack.prod.js](https://github.com/amazingandyyy/mern-stack/blob/master/client/webpack.prod.js)
+```javascript
+ 'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
 ```
 
 # Dependencies(tech-stacks)
