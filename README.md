@@ -1,37 +1,43 @@
 # mern-stack
-MongoDB, Expressjs, React/Redux, Nodejs
+MERN stands for MongoDB, Expressjs, React/Redux, Nodejs
 
-## clone or download and send me PR(please)
+## clone or download
 ```terminal
 $ git clone https://github.com/amazingandyyy/mern-stack.git
 $ npm i
 ```
+
 ## project structure
 ```terminal
 ...
 LICENSE
 package.json
-...
 server/
    package.json
-   .env
+   .env (to create .env, check [prepare your secret session])
 client/
    package.json
+...
 ```
 
-# Usage(make it run on your machine)
-- You need make the both the following two run
+# Usage (run fullstack app on your machine)
 
 ## Prerequirements
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
 - [Node](https://nodejs.org/en/download/) ^8.0.0
 - [npm](https://nodejs.org/en/download/package-manager/)
 
+* notice, you need client and server runs concurrently in different terminal session, in order to make them talk to each other
+
 ## Client-side usage(PORT: 3000)
 ```terminal
-$ cd client
-$ npm i
-$ npm run dev
+$ cd client   // go to client folder
+$ npm i       // npm install pacakges
+$ npm run dev // run it locally
+
+// deployment for client app
+$ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
+$ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
 ```
 
 ## Server-side usage(PORT: 8000)
@@ -43,15 +49,17 @@ run the script at the first level:
 (You need to add a JWT_SECRET in .env to connect to MongoDB)
 
 ```terminal
-$ echo "JWT_SECRET=JWT_SECRET_JWT_SECRET" >> ./server/src/.env
+// in the root level
+$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
 ```
 
-### go to server subfolder and start
+### start
 
 ```terminal
-$ cd server
-$ npm i
-$ npm run dev
+$ cd server   // go to server folder
+$ npm i       // npm install pacakges
+$ npm run dev // run it locally
+$ npm run build // this will build the server code to es5 js codes and generate a dist file
 ```
 
 ## Deploy Server to [Heroku](https://dashboard.heroku.com/)
