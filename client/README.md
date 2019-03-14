@@ -1,17 +1,17 @@
 # client-side
 React/Redux
 
-## clone or download and send me PR(please)
-```terminal
-$ git clone https://github.com/amazingandyyy/mern-stack
-```
-
 # Usage(make it run on your machine)
-### Client-side usage(PORT: 3000)
+
+## Client-side usage(PORT: 3000)
 ```terminal
-$ cd client
-$ npm i
-$ npm run dev
+$ cd client   // go to client folder
+$ npm i       // npm install pacakges
+$ npm run dev // run it locally
+
+// deployment for client app
+$ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
+$ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
 ```
 
 # Dependencies(tech-stack)
