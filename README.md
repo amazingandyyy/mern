@@ -4,6 +4,19 @@ MongoDB, Expressjs, React/Redux, Nodejs
 ## clone or download and send me PR(please)
 ```terminal
 $ git clone https://github.com/amazingandyyy/mern-stack.git
+$ npm i
+```
+## project structure
+```terminal
+...
+LICENSE
+package.json
+...
+server/
+   package.json
+   .env
+client/
+   package.json
 ```
 
 # Usage(make it run on your machine)
@@ -29,11 +42,11 @@ run the script at the first level:
 
 (You need to add a JWT_SECRET in .env to connect to MongoDB)
 
-```console
-$ echo "JWT_SECRET=JWT_SECRET_JWT_SECRET" >> .env
+```terminal
+$ echo "JWT_SECRET=JWT_SECRET_JWT_SECRET" >> ./server/src/.env
 ```
 
-###
+### go to server subfolder and start
 
 ```terminal
 $ cd server
