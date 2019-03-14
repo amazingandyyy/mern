@@ -22,8 +22,19 @@ $ npm run dev
 ```
 
 ## Server-side usage(PORT: 8000)
-(You need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for instructions
-)
+
+### Prepare your secret
+
+run the script at the first level:
+
+(You need to add a JWT_SECRET in .env to connect to MongoDB)
+
+```console
+$ echo "JWT_SECRET=JWT_SECRET_JWT_SECRET" >> .env
+```
+
+###
+
 ```terminal
 $ cd server
 $ npm i
