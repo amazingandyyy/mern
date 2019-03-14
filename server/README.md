@@ -1,7 +1,7 @@
 # server-side
 MongoDB, Express, Node
 
-## Server-side usage(PORT: 8000)
+## Usage
 
 ### Prepare your secret
 
@@ -17,6 +17,7 @@ $ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
 $ cd server   // go to server folder
 $ npm i       // npm install pacakges
 $ npm run dev // run it locally
+// http://localhost:8000 be available
 $ npm run build // this will build the server code to es5 js codes and generate a dist file
 ```
 
