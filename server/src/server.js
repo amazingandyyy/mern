@@ -9,7 +9,7 @@ import routers from './routes';
 import config from './config';
 
 if(!process.env.JWT_SECRET) {
-    const err = new Error('No JWT_SECRET in env variable');
+    const err = new Error('No JWT_SECRET in env variable, check instructions: https://github.com/amazingandyyy/mern-stack#prepare-your-secret');
     console.error(err);
 }
 
