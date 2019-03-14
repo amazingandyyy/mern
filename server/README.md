@@ -1,20 +1,44 @@
 # server-side
 MongoDB, Express, Node
 
-## clone or download and send me PR(please)
+## Server-side usage(PORT: 8000)
+
+### Prepare your secret
+
+run the script at the first level:
+
+(You need to add a JWT_SECRET in .env to connect to MongoDB)
+
 ```terminal
-$ git clone https://github.com/amazingandyyy/mern-stack
+// in the root level
+$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
 ```
 
-### Server-side usage(PORT: 8000)
-(I am sure you need to add a JWT_SECRET in .env to connect to MongoDB -> make it run -> check your terminal for [instructions](https://github.com/amazingandyyy/mern-stack#prepare-your-secret))
+### Start
+
 ```terminal
-$ cd server
-$ npm i
-$ npm run dev
+$ cd server   // go to server folder
+$ npm i       // npm install pacakges
+$ npm run dev // run it locally
+$ npm run build // this will build the server code to es5 js codes and generate a dist file
 ```
-### Deploy to Heroku
-docs is [here](https://github.com/amazingandyyy/mern-stack#deploy-server-to-heroku)
+
+## Deploy Server to [Heroku](https://dashboard.heroku.com/)
+```terminal
+$ npm i -g heroku
+$ heroku login
+...
+$ heroku create
+$ npm run heroku:add <your-super-amazing-heroku-app>
+$ npm run deploy:heroku
+```
+
+### After creating heroku
+
+remember to update the file of [client/webpack.prod.js](https://github.com/amazingandyyy/mern-stack/blob/master/client/webpack.prod.js)
+```javascript
+ 'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
+```
 
 # Dependencies(tech-stack)
 | Server-side
