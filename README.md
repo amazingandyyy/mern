@@ -58,8 +58,9 @@ $ npm run dev
 ```terminal
 $ npm i -g heroku
 $ heroku login
+...
 $ heroku create
-$ npm run heroku:add <your-heroku-app-name>
+$ npm run heroku:add <the-super-amazing-heroku-app-name>
 $ npm run deploy:heroku
 ```
 
