@@ -69,6 +69,9 @@ $ heroku login
 ...
 $ heroku create
 $ npm run heroku:add <your-super-amazing-heroku-app>
+// remember to run this command in the root level, not the server level, so if you follow the documentation along, you may need to do `cd ..`
+$ pwd
+/Users/<your-name>/mern-stack
 $ npm run deploy:heroku
 ```
 
