@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "babel-watch src/server.js",
-    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "start": "npm i && npm run build && cross-env NODE_ENV=production node dist/server.js",
     "postinstall": "npm run build",
     "build": "rm -rf ./dist && NPM_CONFIG_PRODUCTION=false babel -d ./dist ./src -s"
   },
