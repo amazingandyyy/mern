@@ -21,13 +21,6 @@ $ npm run dev // run it locally
 $ npm run build // this will build the server code to es5 js codes and generate a dist file
 ```
 
-### After creating heroku
-
-remember to update the file of [client/webpack.prod.js](https://github.com/amazingandyyy/mern-stack/blob/master/client/webpack.prod.js)
-```javascript
- 'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
-```
-
 # Dependencies(tech-stack)
 | Server-side
 | ---
