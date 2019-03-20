@@ -1,5 +1,5 @@
 # mern-stack
-MERN stands for MongoDB, Expressjs, React/Redux, Nodejs
+MERN stands for MongoDB, Expressjs, React/Redux, Nodejs [![Build Status](https://travis-ci.com/amazingandyyy/mern-stack.svg?branch=master)](https://travis-ci.com/amazingandyyy/mern-stack)
 
 ## clone or download
 ```terminal
@@ -108,7 +108,8 @@ After signing in user can go to account route and make request to token-protecte
 ![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
 
 ## BUGs or comments
-[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
+[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues) (preferred)
+Email Me: amazingandyyy@gmail.com (welcome, say hi)
 
 ## Author
 [Amazingandyyy](https://amazingandyyy.com)
