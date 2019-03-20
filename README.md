@@ -1,5 +1,7 @@
 # MERN Stack [![Build Status](https://travis-ci.com/amazingandyyy/mern-stack.svg?branch=master)](https://travis-ci.com/amazingandyyy/mern-stack)
-MERN stands for MongoDB, Expressjs, React/Redux, Nodejs
+> MERN stands for MongoDB, Expressjs, React/Redux, Nodejs
+
+MERN stack is the idea of using Javascript/Node for fullstack web development.
 
 ## clone or download
 ```terminal
