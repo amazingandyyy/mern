@@ -11,7 +11,7 @@ class Account extends Component {
       editting: false
     }
   }
-  componentWillMount() {
+  componentDidMount() {
     this.props.tryConnect();
     this.props.getUserProfile();
   }
