@@ -10,12 +10,6 @@ export default function(ComposedComponent) {
       }
     }
 
-    componentWillUpdate(nextProps) {
-      if (!nextProps.authenticated) {
-        this.context.router.history.push('/signin');
-      }
-    }
-
     render() {
       return <ComposedComponent {...this.props} />
     }
