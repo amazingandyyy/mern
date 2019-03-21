@@ -1,4 +1,4 @@
-# 🌐 MERN Stack [![Build Status](https://travis-ci.com/amazingandyyy/mern-stack.svg?branch=master)](https://travis-ci.com/amazingandyyy/mern-stack) [![CircleCI](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master.svg?style=svg)](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master)
+# 🌐 MERN Stack [![Build Status](https://travis-ci.com/amazingandyyy/mern-stack.svg?branch=master)](https://travis-ci.com/amazingandyyy/mern-stack) [![CircleCI](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master.svg?style=svg)](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master) [![HitCount](http://hits.dwyl.io/amazingandyyy/badges.svg)](https://github.com/amazingandyyy/mern-stack)
 > MERN stands for MongoDB, Expressjs, React/Redux, Nodejs
 
 MERN stack is the idea of using Javascript/Node for fullstack web development.
@@ -108,6 +108,10 @@ User can sign in or sign up
 
 After signing in user can go to account route and make request to token-protected API endpoint
 ![After signing in user can go to account route](http://i.imgur.com/FzLB51u.png)
+
+## Standard
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 ## BUGs or comments
 [Create new Issues](https://github.com/amazingandyyy/mern-stack/issues) (preferred)
