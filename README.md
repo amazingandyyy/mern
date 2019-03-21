@@ -1,4 +1,4 @@
-# 🌐 MERN Stack [![Build Status](https://travis-ci.com/amazingandyyy/mern-stack.svg?branch=master)](https://travis-ci.com/amazingandyyy/mern-stack) [![CircleCI](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master.svg?style=svg)](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master) [![HitCount](http://hits.dwyl.io/amazingandyyy/badges.svg)](https://github.com/amazingandyyy/mern-stack)
+# 🌐 MERN Stack [![Build Status](https://travis-ci.com/amazingandyyy/mern-stack.svg?branch=master)](https://travis-ci.com/amazingandyyy/mern-stack) [![CircleCI](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master.svg?style=svg)](https://circleci.com/gh/amazingandyyy/mern-stack/tree/master) [![HitCount](http://hits.dwyl.io/amazingandyyy/badges.svg)](https://amazingandyyy.com)
 > MERN stands for MongoDB, Expressjs, React/Redux, Nodejs
 
 MERN stack is the idea of using Javascript/Node for fullstack web development.
