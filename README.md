@@ -114,7 +114,9 @@ After signing in user can go to account route and make request to token-protecte
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 ## BUGs or comments
+
 [Create new Issues](https://github.com/amazingandyyy/mern-stack/issues) (preferred)
+
 Email Me: amazingandyyy@gmail.com (welcome, say hi)
 
 ## Author
