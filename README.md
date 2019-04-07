@@ -11,7 +11,6 @@ $ npm i
 
 ## project structure
 ```terminal
-...
 LICENSE
 package.json
 server/
