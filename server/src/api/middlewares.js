@@ -1,5 +1,5 @@
-import User from '../models/user';
-import token from '../services/token';
+import UserModel from '../user/model';
+import token from '../util/token';
 
 export default {
   loginRequired: (req, res, next) => {
@@ -9,7 +9,7 @@ export default {
     let try_token = req.header('Authorization').split(' ')[0];
     token.verifyToken(try_token, (err, payload) => {
       if (err) return res.status(401).send(err);
-      User.findById(payload.sub)
+      UserModel.findById(payload.sub)
         .exec((err, user) => {
           if (err || !user) {
               return res.status(404).send(err || {

@@ -1,5 +1,5 @@
-import token from '../services/token';
-import User from '../models/user';
+import token from '../util/token';
+import UserModel from './model';
 
 export default {
     signup : (req, res, next) => {
@@ -10,7 +10,7 @@ export default {
                 .status(422)
                 .send({error: 'You must provide email and password.'});
         }
-        User
+        UserModel
             .findOne({
                 email: email
             }, function (err, existingUser) {
@@ -20,7 +20,7 @@ export default {
                         .status(422)
                         .send({error: 'Email is in use'});
                 }
-                const user = new User({
+                const user = new UserModel({
                     name: {
                         first: firstName, 
                         last: lastName
@@ -50,7 +50,7 @@ export default {
                 .status(422)
                 .send({error: 'You must provide email and password.'});
         }
-        User
+        UserModel
             .findOne({
                 email: email
             }, function (err, existingUser) {
@@ -85,10 +85,8 @@ export default {
             delete newProfile.phone;
             delete newProfile.password;
             
-            User.findByIdAndUpdate(userId, newProfile, {new: true})
-            .then(newUser=>{
-                res.sendStatus(200);
-            })
+            UserModel.findByIdAndUpdate(userId, newProfile, {new: true})
+            .then(() => res.sendStatus(200))
             .catch(next)
         })
     }

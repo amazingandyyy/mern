@@ -1,11 +1,11 @@
 {
   "name": "mern-stack-server",
-  "version": "1.0.3",
+  "version": "0.0.1",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "babel-watch src/server.js",
-    "start": "cross-env NODE_ENV=production node dist/server.js",
+    "dev": "babel-watch src/index.js",
+    "start": "cross-env NODE_ENV=production node dist/index.js",
     "postinstall": "npm run build",
     "build": "rm -rf ./dist && NPM_CONFIG_PRODUCTION=false babel -d ./dist ./src -s"
   },
@@ -18,7 +18,7 @@
     "cross-env": "^5.2.0",
     "dotenv": "^2.0.0",
     "express": "^4.16.2",
-    "jwt-simple": "^0.5.1",
+    "jwt-simple": "^0.5.6",
     "mongoose": "^4.7.4",
     "morgan": "^1.9.1"
   },

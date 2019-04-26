@@ -62,7 +62,7 @@ export function signUserOut() {
 export function tryConnect() {
     return function (dispatch) {
         axios
-            .get(`/api`)
+            .get(`/auth-ping`)
             .then(res => {
                 dispatch({
                     type: TRY_CONNECT,
@@ -75,7 +75,7 @@ export function tryConnect() {
 export function getUserProfile() {
     return function (dispatch) {
         axios
-            .get(`/api/userProfile`)
+            .get(`/user/profile`)
             .then(res => {
                 dispatch({
                     type: GET_USER_PROFILE,
@@ -89,7 +89,7 @@ export function getUserProfile() {
 export function updateUserProfile(profile) {
     return function (dispatch) {
         axios
-            .post(`/api/userProfile`, profile)
+            .post(`/user/profile`, profile)
             .then(() => {
                 dispatch({
                     type: UPDATE_USER_PROFILE_GOOD

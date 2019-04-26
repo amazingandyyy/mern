@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import bcrypt from 'bcrypt-nodejs';
 
 // Define the model
-const userSchema = new mongoose.Schema({
+const Schema = new mongoose.Schema({
     name: {
         first: String,
         last: String,
@@ -28,7 +28,7 @@ const userSchema = new mongoose.Schema({
     }
 })
 
-userSchema.pre('save', function(next){
+Schema.pre('save', function(next){
     // get access to user model, then we can use user.email, user.password
     const user = this;
 
@@ -45,7 +45,7 @@ userSchema.pre('save', function(next){
 })
 
 // Make use of methods for comparedPassword
-userSchema.methods.comparedPassword = function(candidatePassword, cb) {
+Schema.methods.comparedPassword = function(candidatePassword, cb) {
     bcrypt.compare(candidatePassword, this.password, function(err, good){
         if (err ) { return cb(err)}
         cb(null, good);
@@ -53,4 +53,4 @@ userSchema.methods.comparedPassword = function(candidatePassword, cb) {
 }
 
 // Export the model
-export default mongoose.model('User', userSchema);
+export default mongoose.model('User', Schema);
