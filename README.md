@@ -95,7 +95,6 @@ react-dom: ^16.2.0 | express: ^4.14.0
 react-redux: ^4.0.0 | jwt-simple: ^0.5.1
 react-router-dom: ^4.2.2 | mongoose: ^4.7.4
 redux: ^3.7.2 | morgan: ^1.7.0
-redux-form: ^6.4.1 |
 redux-thunk: ^2.1.0 |
 
 # Screenshots of this project

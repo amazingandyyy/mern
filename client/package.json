@@ -4,9 +4,10 @@
   "description": "Simple starter package for Redux with React and Babel support",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "dev": "npm ls react && webpack-dev-server --open --config webpack.dev.js",
     "start": "serve ../docs",
-    "build": "rm -rf ../docs && webpack --config webpack.prod.js"
+    "build": "rm -rf ../docs && webpack --config webpack.prod.js && npm run copy:static",
+    "copy:static": "cp -rf ./src/statics ../docs"
   },
   "author": "amazingandyyy",
   "license": "MIT",
@@ -24,7 +25,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
-    "node-sass": "^4.11.0",
+    "node-sass": "^4.12.0",
     "sass-loader": "^6.0.6",
     "serve": "^9.4.0",
     "style-loader": "^0.20.1",
@@ -40,7 +41,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
-    "redux-form": "^7.2.3",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "^2.1.0",
+    "use-form-react": "0.0.8"
   }
 }

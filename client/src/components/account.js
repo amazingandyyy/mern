@@ -1,69 +1,74 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {reduxForm, Field} from 'redux-form';
-import {tryConnect, getUserProfile, updateUserProfile} from '../actions';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import CenterCard363 from './centerCard363';
+import useForm from '../use-form-react';
 
-class Account extends Component {
-  constructor(){
-    super();
-    this.state = {
-      editting: false
-    }
+const Account = (props) => {
+  const [editting, setEditting] =  useState(false);
+  const [errMsg, setErrMsg] =  useState('');
+  const [status, setStatus] =  useState('');
+  const [profile, setProfile] =  useState({});
+  const options = {
+    initialValues: {
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: ''
+    },
+    callback: () => {
+      updateUserProfile(inputs)
+    },
+    debug: false
   }
-  componentDidMount() {
-    this.props.tryConnect();
-    this.props.getUserProfile();
+  const { setInputs, onSubmit, onChange, inputs, dirty, reset } = useForm('AdvanceForm', options);
+  const tryConnect = () => axios.get(`/auth-ping`).then(r=> setStatus(r.data));
+  const getUserProfile = () => axios.get(`/user/profile`).then(r=> {
+    setProfile(r.data)
+    setInputs({
+      firstName: r.data.name.first,
+      lastName: r.data.name.last,
+      email: r.data.email
+    })
+    setErrMsg();
+  });
+  const updateUserProfile = () => {
+    axios.post(`/user/profile`, inputs)
+      .then(() => cancelForm())
+      .catch(e => setErrMsg(`${e.response.data}. Please try it again.`));
   }
-  render() {
-    let {status, profile} = this.props;
-    return (
-      <CenterCard363>
-        <div className='card border-secondary'>
-        <h4 className="card-header">
-          Account
-        </h4>
-        <div className='card-body'>
-        <p className="text-muted">Server status: {status} ☀</p>
-          {profile && this.renderProfileForm()}
-        </div>
-        </div>
-      </CenterCard363>
-    );
+  useEffect(() => {
+    tryConnect();
+    getUserProfile();
+  }, [])
+  const switchEditting = () => {
+    setEditting(!editting)
   }
-  handleFormSubmit(d){
-    this.props.updateUserProfile(d)
+  const cancelForm = () => {
+    setEditting(false)
+    reset();
+    getUserProfile();
   }
-  switchEditting() {
-    this.setState({editting: !this.state.editting})
-  }
-  cancelForm(){
-    this.switchEditting();
-    this.props.reset();
-  }
-  renderButtons() {
-    const {submitting, dirty} = this.props;
-    if(this.state.editting){
+  const renderButtons = () => {
+    if(editting){
       return (<div className="form-group">
         <button disabled={!dirty} type="submit" className="btn-lg btn btn-light btn-block">Save Change</button>
-        <button disabled={submitting} className="btn-lg btn btn-secondary btn-block" onClick={this.cancelForm.bind(this)}>Cancel</button>
+        <button className="btn-lg btn btn-secondary btn-block" onClick={cancelForm}>Cancel</button>
       </div>)
     }else{
-      return (<button className="btn btn-light btn-lg btn-block" onClick={this.switchEditting.bind(this)}>Update Information</button>)
+      return (<button className="btn btn-light btn-lg btn-block" onClick={switchEditting}>Update Information</button>)
     }
   }
-  renderProfileForm(){
-    const {editting} = this.state;
-    const {handleSubmit, dirty, updateProfileFailMsg} = this.props;
+  const renderProfileForm = () => {
     return (
-      <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+      <form onSubmit={onSubmit}>
         <div className="form-group">
           <label>First Name:</label>
-          <Field
+          <input
             disabled={!editting}
-            type= 'text'
+            type='text'
             name="firstName"
-            component="input"
+            onChange={onChange}
+            value={inputs.firstName}
             className="form-control form-control-lg"
             placeholder="First Name"
             required
@@ -72,11 +77,12 @@ class Account extends Component {
 
       <div className="form-group">
         <label>Last Name:</label>
-        <Field
+        <input
           disabled={!editting}
-          type= 'text'
+          type='text'
           name="lastName"
-          component="input"
+          onChange={onChange}
+          value={inputs.lastName}
           className="form-control form-control-lg"
           placeholder="Last Name"
           required
@@ -85,12 +91,13 @@ class Account extends Component {
 
       <div className="form-group">
         <label>Email:</label>
-        <Field
+        <input
             disabled
             readOnly
-            type= 'email'
+            type='email'
             name="email"
-            component="input"
+            onChange={onChange}
+            value={inputs.email}
             className="form-control form-control-lg"
             placeholder="sample@email.com"
             required
@@ -98,42 +105,37 @@ class Account extends Component {
       </div>
       {dirty && <div className="form-group">
         <label>Password:</label>
-        <Field
-          type= 'password'
+        <input
+          type='password'
           name="password"
-          component="input"
-          className={(updateProfileFailMsg)?"form-control form-control-lg is-invalid":"form-control form-control-lg"}
+          onChange={onChange}
+          value={inputs.password}
+          className={(errMsg)?"form-control form-control-lg is-invalid":"form-control form-control-lg"}
           placeholder="your password"
           required
         />
-        {(updateProfileFailMsg) && <div className="invalid-feedback">
-          {updateProfileFailMsg}
+        {(errMsg) && <div className="invalid-feedback">
+          {errMsg}
         </div>}
       </div>}
       <div style={{'paddingTop': '30px'}}>
-        {this.renderButtons()}
+        {renderButtons()}
       </div>
     </form>);
   }
+  return (
+    <CenterCard363>
+      <div className='card border-secondary'>
+      <h4 className="card-header">
+        Account
+      </h4>
+      <div className='card-body'>
+      <p className="text-muted">Server status: {status} ☀</p>
+        {profile && renderProfileForm()}
+      </div>
+      </div>
+    </CenterCard363>
+  );
 }
 
-function mapStateToProps({auth, user}) {
-  return user.profile?{
-      status: auth.status,
-      profile: user.profile,
-      initialValues: {
-        email: user.profile.email,
-        firstName: user.profile.name.first,
-        lastName: user.profile.name.last
-      },
-      updateProfileFailMsg: user.updateProfileFailMsg
-  }:{
-    status: auth.status,
-    profile: user.profile
-  }
-}
-
-
-export default connect(mapStateToProps, {tryConnect, getUserProfile, updateUserProfile})(reduxForm({
-  form: 'profileUpdate',
-})(Account));
+export default Account;

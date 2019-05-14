@@ -3,10 +3,7 @@ import {
     AUTH_USER,
     UNAUTH_USER,
     AUTH_ERROR,
-    TRY_CONNECT,
-    GET_USER_PROFILE,
-    UPDATE_USER_PROFILE_GOOD,
-    UPDATE_USER_PROFILE_FAIL 
+    GET_USER_PROFILE 
 } from './types';
 const ROOT_URL = process.env.API_URI || 'http://localhost:8000';
 
@@ -59,19 +56,6 @@ export function signUserOut() {
     }
 }
 
-export function tryConnect() {
-    return function (dispatch) {
-        axios
-            .get(`/auth-ping`)
-            .then(res => {
-                dispatch({
-                    type: TRY_CONNECT,
-                    payload: res.data
-                })
-            })
-            .catch(error => console.log(error.response.data));
-    }
-}
 export function getUserProfile() {
     return function (dispatch) {
         axios
@@ -85,25 +69,5 @@ export function getUserProfile() {
             .catch(error => console.log(error.response.data));
     }
 }
-
-export function updateUserProfile(profile) {
-    return function (dispatch) {
-        axios
-            .post(`/user/profile`, profile)
-            .then(() => {
-                dispatch({
-                    type: UPDATE_USER_PROFILE_GOOD
-                })
-                window.location.reload(true);
-            })
-            .catch(error => {
-                console.log(error.response.data)
-                if(error.response.data == "Incorrect Password") {
-                    dispatch({
-                        type: UPDATE_USER_PROFILE_FAIL,
-                        payload: "Incorrect Password. Please try it again."
-                    })
-                }
-            });
-    }
-}
+const request = axios;
+export { request };
