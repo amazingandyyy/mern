@@ -3,7 +3,7 @@ import axios from 'axios';
 import CenterCard363 from './centerCard363';
 import useForm from '../use-form-react';
 
-const Account = (props) => {
+const Account = () => {
   const [editting, setEditting] =  useState(false);
   const [errMsg, setErrMsg] =  useState('');
   const [status, setStatus] =  useState('');
