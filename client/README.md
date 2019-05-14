@@ -38,7 +38,7 @@ After signing in user can go to account page and make request to token-protected
 ![After signing in user can go to account page](http://i.imgur.com/FzLB51u.png)
 
 ## BUGs or comments
-[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
+[Create new Issues](https://github.com/amazingandyyy/mern/issues)
 
 ## Author
 [Amazingandyyy](amazingandyyy.github.io)

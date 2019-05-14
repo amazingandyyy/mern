@@ -34,7 +34,7 @@ $ npm run build // this will build the server code to es5 js codes and generate 
 | morgan: ^1.7.0
 
 ## BUGs or comments
-[Create new Issues](https://github.com/amazingandyyy/mern-stack/issues)
+[Create new Issues](https://github.com/amazingandyyy/mern/issues)
 
 ## Author
 [Amazingandyyy](amazingandyyy.github.io)
