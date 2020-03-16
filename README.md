@@ -9,7 +9,7 @@ MongoDB, Expressjs, React/Redux, Nodejs
    <a href="https://travis-ci.com/amazingandyyy/mern">
       <img src="https://travis-ci.com/amazingandyyy/mern.svg?branch=master" />
    </a>
-   <a href="https://github.com/amazingandyyy/use-form-react/blob/master/LICENSE">
+   <a href="https://github.com/amazingandyyy/mern/blob/master/LICENSE">
       <img src="https://img.shields.io/badge/License-MIT-green.svg" />
    </a>
    <a href="https://circleci.com/gh/amazingandyyy/mern">
@@ -139,4 +139,4 @@ Email Me: amazingandyyy@gmail.com (welcome, say hi)
 [Amazingandyyy](https://amazingandyyy.com)
 
 ### License
-[MIT](https://github.com/amazingandyyy/eventbrite-api/blob/master/LICENSE)
+[MIT](https://github.com/amazingandyyy/mern/blob/master/LICENSE)
