@@ -10,6 +10,11 @@
     "heroku:add": "heroku git:remote -a",
     "deploy:heroku": "git subtree push --prefix server heroku master"
   },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  },
+  "engineStrict": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/amazingandyyy/mern.git"
@@ -24,6 +29,7 @@
   },
   "homepage": "https://github.com/amazingandyyy/mern#readme",
   "devDependencies": {
+    "@amazingandyyy/git-hooks": "^0.1.0",
     "eslint": "^4.14.0",
     "eslint-config-logux": "^17.0.0",
     "eslint-config-standard": "^10.2.1",
