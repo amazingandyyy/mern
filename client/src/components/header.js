@@ -3,33 +3,32 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import { NavLink } from "react-router-dom";
 
-function Header({ authenticated }) {
-  console.log("wassef ", authenticated);
-  const renderSignButton = (auth) => {
-    if (auth)
-      return (
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/signout">
-            Sign out
-          </NavLink>
-        </li>
-      );
+const renderSignButton = (auth) => {
+  if (auth)
     return (
-      <section className="d-flex">
-        <li className="nav-item" key="1">
-          <NavLink to="/signin" className="nav-link">
-            Sign in
-          </NavLink>
-        </li>
-        <li className="nav-item" key="2">
-          <NavLink to="/signup" className="nav-link">
-            Sign Up
-          </NavLink>
-        </li>
-      </section>
+      <li className="nav-item">
+        <NavLink className="nav-link" to="/signout">
+          Sign out
+        </NavLink>
+      </li>
     );
-  };
+  return (
+    <section className="d-flex">
+      <li className="nav-item" key="1">
+        <NavLink to="/signin" className="nav-link">
+          Sign in
+        </NavLink>
+      </li>
+      <li className="nav-item" key="2">
+        <NavLink to="/signup" className="nav-link">
+          Sign Up
+        </NavLink>
+      </li>
+    </section>
+  );
+};
 
+function Header({ authenticated }) {
   return (
     <nav className="navbar navbar-expand-sm bg-light text-white-50">
       <NavLink className="navbar-brand logofont" to="/">
