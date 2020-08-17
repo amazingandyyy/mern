@@ -4,3 +4,13 @@
 $fatfont: "Roboto", sans-serif;
 $slimfont: "Raleway", sans-serif;
 $logofont: "Pacifico", cursive;
+
+.fatfont {
+  font-family: $fatfont;
+}
+.slimfont {
+  font-family: $slimfont;
+}
+.logofont {
+  font-family: $logofont;
+}
