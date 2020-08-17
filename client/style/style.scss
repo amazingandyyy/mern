@@ -1,5 +1,4 @@
 @import "./custom";
-
 $theme-colors: (
   "blue": blue,
   "indigo": indigo,
@@ -12,13 +11,14 @@ $theme-colors: (
   "teal": teal,
   "cyan": cyan,
   "white": white,
+  "dark": rgb(34, 34, 34),
 );
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
   overflow-x: hidden;
-  background-color: white;
+  background-color: rgb(34, 34, 34);
   .cointainer {
     padding: 10px;
     padding-top: 30px;

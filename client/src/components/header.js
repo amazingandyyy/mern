@@ -30,7 +30,7 @@ class Header extends Component {
   }
   render() {
     return (
-      <nav className="navbar navbar-expand-sm navbar-light bg-dark">
+      <nav className="navbar navbar-expand-sm bg-light text-white-50">
         <NavLink className="navbar-brand" to="/">
           MERN
         </NavLink>
