@@ -17,6 +17,7 @@ $theme-colors: (
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
+  overflow-x: hidden;
   background-color: white;
   .cointainer {
     padding: 10px;
@@ -28,15 +29,8 @@ body {
       border: none;
     }
   }
-  .row {
-    margin: 0px 0px;
-  }
-
-  .col-xl-auto {
-    padding: 0px 0px;
-  }
-  button.btn {
-    cursor: pointer;
+  footer {
+    flex-shrink: none;
   }
 }
 
