@@ -29,15 +29,24 @@ body {
       border: none;
     }
   }
+  .title {
+    transition-duration: 500ms;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.253);
+    &:hover {
+      color: white;
+      background-color: rgb(1, 116, 211);
+      cursor: default;
+    }
+  }
+  .shadow {
+    box-shadow: 5px 5px 10px red;
+  }
   footer {
     flex-shrink: none;
   }
 }
 
 @media (max-width: 543px) {
-  body {
-  }
 }
-
 @media (min-width: 767px) {
 }
