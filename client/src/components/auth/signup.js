@@ -33,7 +33,9 @@ const Signup = (props) => {
   return (
     <CenterCard363>
       <div className="card">
-        <h4 className="card-header">Sign Up</h4>
+        <h4 className="card-header">
+          <span className="title">Sign Up</span>
+        </h4>
         <div className="card-body">
           <form onSubmit={onSubmit}>
             <InputText

@@ -26,7 +26,7 @@ const Signin = (props) => {
     <CenterCard363>
       <div className="card">
         <h4 className="card-header">
-          <span className="title slimfont">Sign In</span>
+          <span className="title">Sign In</span>
         </h4>
         <div className="card-body">
           <form onSubmit={onSubmit}>

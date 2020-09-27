@@ -17,6 +17,7 @@ $theme-colors: (
 @import "node_modules/bootstrap/scss/bootstrap";
 
 body {
+  font-family: $slimfont;
   overflow-x: hidden;
   background-color: rgb(34, 34, 34);
   .cointainer {
@@ -30,16 +31,19 @@ body {
     }
   }
   .title {
-    transition-duration: 500ms;
-    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.253);
+    user-select: none; /* Standard */
+    cursor: default;
+    padding: 0.5em;
+    background-repeat: no-repeat;
+    background-size: 100% 0.2em;
+    background-position: 0 65%;
+    background-image: linear-gradient(100deg, #0084ffb2 0%, #ffffff 100%);
+    transition: all 300ms ease-in-out;
     &:hover {
       color: white;
-      background-color: rgb(1, 116, 211);
-      cursor: default;
+      background-size: 100% 73%;
+      background-image: linear-gradient(100deg, #0084ff 0%, #000000 100%);
     }
-  }
-  .shadow {
-    box-shadow: 5px 5px 10px red;
   }
   footer {
     flex-shrink: none;
