@@ -4,6 +4,7 @@ import useForm from "../../use-form-react";
 
 import { signUserIn } from "../../actions";
 import CenterCard363 from "../centerCard363";
+import InputText from "./inputText";
 
 const Signin = (props) => {
   const options = {
@@ -29,42 +30,24 @@ const Signin = (props) => {
         </h4>
         <div className="card-body">
           <form onSubmit={onSubmit}>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">
-                  Email :
-                </span>
-              </div>
-              <input
-                name="email"
-                type="email"
-                onChange={onChange}
-                value={inputs.email}
-                required
-                className="form-control"
-                placeholder="name@email.com"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text" id="basic-addon1">
-                  Password
-                </span>
-              </div>
-              <input
-                type="password"
-                name="password"
-                onChange={onChange}
-                value={inputs.password}
-                required
-                className="form-control"
-                placeholder="**********"
-                aria-label="Password"
-                aria-describedby="basic-addon1"
-              />
-            </div>
-
+            <InputText
+              name="email"
+              text="Email "
+              value={inputs.email}
+              placeholder={"your@email.com"}
+              onChange={onChange}
+              required
+              type="email"
+            />
+            <InputText
+              name="password"
+              text="Password "
+              value={inputs.password}
+              placeholder={"**********"}
+              onChange={onChange}
+              required
+              type="password"
+            />
             <div style={{ paddingTop: "30px" }}>
               <button
                 type="submit"
