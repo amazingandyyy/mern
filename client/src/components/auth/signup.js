@@ -42,7 +42,7 @@ const Signup = (props) => {
               name="firstName"
               text="First Name "
               value={inputs.firstName}
-              placeholder={"your name"}
+              placeholder="your name"
               onChange={onChange}
               required
               type="text"
@@ -52,7 +52,7 @@ const Signup = (props) => {
               name="lastName"
               text="Last Name "
               value={inputs.lastName}
-              placeholder={"your last name"}
+              placeholder="your last name"
               onChange={onChange}
               required
               type="text"
@@ -61,7 +61,7 @@ const Signup = (props) => {
               name="email"
               text="Email "
               value={inputs.email}
-              placeholder={"your name"}
+              placeholder="your@email.com"
               onChange={onChange}
               required
               type="email"
@@ -71,7 +71,7 @@ const Signup = (props) => {
               name="password"
               text="Password "
               value={inputs.password}
-              placeholder={"your name"}
+              placeholder="**********"
               onChange={onChange}
               required
               type="password"
@@ -81,7 +81,7 @@ const Signup = (props) => {
               name="confirmPassword"
               text="Confirm Password "
               value={inputs.password2}
-              placeholder={"your name"}
+              placeholder="**********"
               onChange={onChange}
               required
               type="password"
