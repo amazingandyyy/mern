@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint --fix **/src/",
+    "precommit": "npm test",
+    "prepush": "npm test",
     "heroku:add": "heroku git:remote -a",
     "deploy:heroku": "git subtree push --prefix server heroku master"
   },
