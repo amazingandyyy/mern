@@ -17,7 +17,7 @@ if(!process.env.JWT_SECRET) {
 
 const app = express();
 
-mongoose.connect(config.mongoose.uri, { useMongoClient: true })
+mongoose.connect(config.mongoose.uri)
 .catch(err=>console.error(err));
 
 mongoose.Promise = global.Promise;
