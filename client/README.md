@@ -26,7 +26,7 @@ $ npm run start // this will run the files in docs, this behavior is exactly the
 | mongoose: ^4.7.4
 | morgan: ^1.7.0
 
-# Some screemshots
+# Some screenshots
 
 User visit public and Home page
 ![User visit public and Home page](http://i.imgur.com/ORCGHHY.png)
