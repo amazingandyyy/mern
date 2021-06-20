@@ -80,7 +80,7 @@ const Signup = (props) => {
                 </div>
                 
                 <div className="form-group">
-                    <label>Comfirm Password:</label>
+                    <label>Confirm Password:</label>
                     <input
                         type='password'
                         name="password2"
