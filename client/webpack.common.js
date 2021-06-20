@@ -6,7 +6,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 module.exports = {
     entry: {
         app: './src/app.js',
-        vender: [ 
+        vendor: [ 
             'react', 'react-dom', 'redux', 
             'react-redux', 'react-router-dom', 
             'axios', 'prop-types' ]
@@ -42,7 +42,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: 'manifest',
             filename: "manifest.js",
-            chunks: ['vender']
+            chunks: ['vendor']
         }),
         new ExtractTextPlugin({
             filename: 'styles/style.css'
