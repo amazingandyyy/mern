@@ -138,5 +138,9 @@ Email Me: amazingandyyy@gmail.com (welcome, say hi)
 ## Author
 [Amazingandyyy](https://amazingandyyy.com)
 
+I recently launch my monthly mentorship program, feel free to reach out and see what we can grow together:
+
+<a href="https://mentorcruise.com/mentor/andychen/"> <img src="https://cdn.mentorcruise.com/img/banner/fire-sm.svg" width="240" alt="MentorCruise"> </a>
+
 ### License
 [MIT](https://github.com/amazingandyyy/mern/blob/master/LICENSE)
