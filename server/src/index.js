@@ -1,7 +1,6 @@
 
 import express from 'express';
 import http from 'http';
-import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cors from 'cors';
@@ -27,8 +26,8 @@ app.use(cors({
     origin: ['https://www.amazingandyyy.com', 'http://localhost:3000']
 }));
 app.use(morgan('dev'));
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }));
 app.get('/ping', (req, res) => res.send('pong'))
 app.get('/', (req, res) => res.json({'source': 'https://github.com/amazingandyyy/mern'}))
 app.post('/signup', Authentication.signup)
