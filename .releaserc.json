@@ -1,0 +1,15 @@
+{
+  "branches": [
+    "main",
+    {
+      "channel": "next",
+      "name": "(f|b|c)/*",
+      "prerelease": "beta-<%= (/^\\w+-\\d+/.exec(name.substr(2)) || [])[0] %>"
+    }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/github"
+  ]
+}

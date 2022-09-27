@@ -1,9 +1,9 @@
-
-import express from 'express';
 import http from 'http';
+import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
 import cors from 'cors';
+import logger from './util/logger';
 import config from './config';
 import Middlewares from './api/middlewares'
 import Authentication from './api/authentication'
@@ -11,7 +11,7 @@ import UserRouter from './user/router'
 
 if(!process.env.JWT_SECRET) {
     const err = new Error('No JWT_SECRET in env variable, check instructions: https://github.com/amazingandyyy/mern#prepare-your-secret');
-    console.error(err);
+    logger.warn(err.message);
 }
 
 const app = express();
@@ -36,12 +36,12 @@ app.get('/auth-ping', Middlewares.loginRequired, (req, res) => res.send('connect
 app.use('/user', Middlewares.loginRequired, UserRouter)
 
 app.use((err, req, res, next) => {
-    console.log('Error:', err.message);
+    logger.error(err.message);
     res.status(422).json(err.message);
 });
 
 // Server Setup
 const port = process.env.PORT || 8000
 http.createServer(app).listen(port, ()=>{
-    console.log(`\x1b[32m`, `Server listening on: ${port}`, `\x1b[0m`)
+    logger.info(`Server listening on: ${port}`)
 });

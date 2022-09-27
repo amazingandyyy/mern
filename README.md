@@ -24,7 +24,7 @@ MERN stack is the idea of using Javascript/Node for fullstack web development.
 ## clone or download
 ```terminal
 $ git clone https://github.com/amazingandyyy/mern.git
-$ npm i
+$ yarn # or npm i
 ```
 
 ## project structure
@@ -50,9 +50,9 @@ notice, you need client and server runs concurrently in different terminal sessi
 
 ## Client-side usage(PORT: 3000)
 ```terminal
-$ cd client   // go to client folder
-$ npm i       // npm install packages
-$ npm run dev // run it locally
+$ cd client          // go to client folder
+$ yarn # or npm i    // npm install packages
+$ npm run dev        // run it locally
 
 // deployment for client app
 $ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
@@ -69,7 +69,8 @@ run the script at the first level:
 
 ```terminal
 // in the root level
-$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
+$ cd server
+$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> src/.env
 ```
 
 ### Start

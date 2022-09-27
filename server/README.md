@@ -8,7 +8,7 @@ MongoDB, Express, Node
 run the script at the first level: (You need to add a JWT_SECRET in .env to connect to MongoDB)
 ```terminal
 // in the root level
-$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> ./server/src/.env
+$ echo "JWT_SECRET=YOUR_JWT_SECRET" >> src/.env
 ```
 
 ### Start

@@ -8,11 +8,11 @@ const Signup = (props) => {
     const [errMsg, setErrorMsg] = useState('');
     const options = {
         initialValues: {
-            'firstName': 'a',
-            'lastName': 'a',
-            'email': 'aa@mail.com',
-            'password': 'aa',
-            'password2': 'a'
+            'firstName': 'Amazing',
+            'lastName': 'Tester',
+            'email': 'tester@mail.com',
+            'password': 'password',
+            'password2': ''
         },
         callback: () => {
             if (inputs.password == inputs.password2) {
