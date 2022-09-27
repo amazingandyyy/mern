@@ -1,6 +1,5 @@
 {
   "name": "mern",
-  "version": "2.2.0",
   "description": "CRUD in MongoDB, Express, React/Hooks, Node",
   "main": "index.js",
   "scripts": {

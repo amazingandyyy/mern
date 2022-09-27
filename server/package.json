@@ -1,6 +1,5 @@
 {
   "name": "mern-server",
-  "version": "0.0.1",
   "description": "",
   "scripts": {
     "dev": "babel-watch src/index.js",
