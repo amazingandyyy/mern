@@ -94,11 +94,16 @@ $ npm run deploy:heroku
 
 ### After creating heroku
 
+if using webpack:
 remember to update the file of [client/webpack.prod.js](https://github.com/amazingandyyy/mern/blob/master/client/webpack.prod.js)
 ```javascript
  'API_URI': JSON.stringify('https://your-super-amazing-heroku-app.herokuapp.com')
 ```
-
+if using parcel
+remember to update the file of [client/.env.production](https://github.com/amazingandyyy/mern/blob/master/client/.env.production.js)
+```
+ REACT_APP_API_URI=https://your-super-amazing-heroku-app.herokuapp.com
+```
 # Dependencies(tech-stacks)
 Client-side | Server-side
 --- | ---

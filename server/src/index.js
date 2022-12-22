@@ -23,7 +23,7 @@ mongoose.Promise = global.Promise;
 
 // App Setup
 app.use(cors({
-    origin: ['https://www.amazingandyyy.com', 'http://localhost:3000']
+    origin: ['https://www.amazingandyyy.com', 'http://localhost:3000', 'http://localhost:1234']
 }));
 app.use(morgan('dev'));
 app.use(express.json())
