@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {connect} from 'react-redux';
 import {signUserUp} from '../../actions';
 import CenterCard363 from '../centerCard363';
