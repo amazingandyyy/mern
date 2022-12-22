@@ -1,25 +1,20 @@
-import { Component } from 'react';
+import { useEffect } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useNavigate } from "react-router-dom";
 
 export default function(ComposedComponent) {
-  class Authentication extends Component {
-    componentDidMount() {
-      if (!this.props.authenticated) {
-        this.context.router.history.push('/signin');
+  const Authentication = (props) => {
+    const navigate = useNavigate()
+    useEffect(() => {
+      if (!props.authenticated) {
+        navigate('/signin')
       }
-    }
-
-    render() {
-      return <ComposedComponent {...this.props} />
-    }
+    }, [props.authenticated])
+    return <ComposedComponent {...props} />
   }
 
   function mapStateToProps({auth}) {
     return { authenticated: auth.authenticated };
-  }
-  Authentication.contextTypes = {
-    router: PropTypes.object
   }
 
   return connect(mapStateToProps)(Authentication);

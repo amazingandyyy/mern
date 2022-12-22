@@ -1,10 +1,9 @@
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import reduxThunk from 'redux-thunk';
-
-import App from './components/app';
+import Header from './components/header';
 import Home from './components/home';
 import Public from './components/public';
 import Account from './components/account';
@@ -28,16 +27,17 @@ if (token) {
 ReactDOM.render(
   <Provider store={store}>
     <HashRouter hashType="noslash">
-      <App>
-        <Switch>
-          <Route exact path="/" component= {Home} />
-          <Route path="/public" component= {Public} />
-          <Route path="/account" component= {RequireAuth(Account)} />
-          <Route path="/signin" component= {Signin} />
-          <Route path="/signup" component= {Signup} />
-          <Route path="/signout" component= {Signout} />
-        </Switch>
-      </App>
+      <Header />
+      <div className='container'>
+        <Routes>
+          <Route exact path="/" element= {<Home/>} />
+          <Route path="/public" element= {<Public/>} />
+          <Route path="/account" element= {RequireAuth(<Account />)} />
+          <Route path="/signin" element= {<Signin/>} />
+          <Route path="/signup" element= {<Signup/>} />
+          <Route path="/signout" element= {<Signout/>} />
+        </Routes>
+      </div>
     </HashRouter>
   </Provider>
   , document.getElementById('root'));
