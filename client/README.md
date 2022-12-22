@@ -12,6 +12,9 @@ $ yarn dev    // run it locally
 // deployment for client app
 $ yarn build // this will compile the react code using webpack and generate a folder called docs in the root level
 $ yarn start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
+
+// use parcel to run
+$ yarn dev:parcel
 ```
 
 # Some screenshots
@@ -35,3 +38,7 @@ After signing in user can go to account page and make request to token-protected
 
 ### License
 [MIT](https://github.com/amazingandyyy/eventbrite-api/blob/master/LICENSE)
+
+
+### TODO
+- Remove webpack
