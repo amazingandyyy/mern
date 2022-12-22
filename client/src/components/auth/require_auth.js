@@ -2,20 +2,18 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 
-export default function(ComposedComponent) {
-  const Authentication = (props) => {
-    const navigate = useNavigate()
-    useEffect(() => {
-      if (!props.authenticated) {
-        navigate('/signin')
-      }
-    }, [props.authenticated])
-    return <ComposedComponent {...props} />
-  }
+const AuthComponent = ({ Component, ...props }) => {
+  const navigate = useNavigate()
+  useEffect(() => {
+    if (!props.authenticated) {
+      navigate('/signin')
+    }
+  }, [])
 
-  function mapStateToProps({auth}) {
-    return { authenticated: auth.authenticated };
-  }
-
-  return connect(mapStateToProps)(Authentication);
+  return <Component {...props} />
 }
+
+function mapStateToProps({auth}) {
+  return { authenticated: auth.authenticated };
+}
+export default connect(mapStateToProps)(AuthComponent)
