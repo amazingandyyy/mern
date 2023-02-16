@@ -1,4 +1,3 @@
-import http from 'http';
 import express from 'express';
 import morgan from 'morgan';
 import mongoose from 'mongoose';
@@ -42,6 +41,6 @@ app.use((err, req, res, next) => {
 
 // Server Setup
 const port = process.env.PORT || 8000
-http.createServer(app).listen(port, ()=>{
+app.listen(port, ()=>{
     logger.info(`Server listening on: ${port}`)
 });
