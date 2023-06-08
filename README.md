@@ -18,6 +18,10 @@ MongoDB, Expressjs, React/Redux, Nodejs
 
 MERN stack is the idea of using Javascript/Node for fullstack web development.
 
+## Growing community
+
+[![Star History Chart](https://api.star-history.com/svg?repos=amazingandyyy/mern&type=Date)](https://star-history.com/#amazingandyyy/mern&Date)
+
 ## clone or download
 ```terminal
 $ git clone https://github.com/amazingandyyy/mern.git
