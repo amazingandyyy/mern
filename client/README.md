@@ -41,5 +41,7 @@ After signing in user can go to account page and make request to token-protected
 
 
 ### TODO
+
+this is new edit
 - Remove webpack
 - Add env for deployment .env.dev .env.prod
