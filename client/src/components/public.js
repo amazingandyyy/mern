@@ -1,7 +1,7 @@
 const Public = () => {
   return (
     <div>
-    <h1>Public</h1>
+    <h1>Public is not</h1>
     </div>
   );
 }
