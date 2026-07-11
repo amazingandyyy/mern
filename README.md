@@ -1,5 +1,5 @@
 <h1 align="center">
-🌐 MERN Stack
+🌐 MERN STACK
 </h1>
 <p align="center">
 MongoDB, Expressjs, React/Redux, Nodejs
