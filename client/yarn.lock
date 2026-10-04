@@ -5850,7 +5850,7 @@ promise-retry@^2.0.1:
     err-code "^2.0.2"
     retry "^0.12.0"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -6054,15 +6054,6 @@ react-router@6.6.0:
   integrity sha512-+VPfCIaFbkW7BAiB/2oeprxKAt1KLbl+zXZ10CXOYezKWgBmTKyh8XjI53eLqY5kd7uY+V4rh3UW44FclwUU+Q==
   dependencies:
     "@remix-run/router" "1.2.0"
-
-react@^16.8.6:
-  version "16.14.0"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.14.0.tgz#94d776ddd0aaa37da3eda8fc5b6b18a4c9a3114d"
-  integrity sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    prop-types "^15.6.2"
 
 react@^17.0.0:
   version "17.0.2"
@@ -7484,13 +7475,6 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
-
-use-form-react@0.0.9:
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/use-form-react/-/use-form-react-0.0.9.tgz#10675f8a57b7ec17d723048d2fd1571bec0093e7"
-  integrity sha512-cN2kbLNnSY4ee1EBji2YZJq+5bQpY0vNjMmxoQa3vwUwGzi62FwSdvUFesNLlhNcVTGWTiyet3B/Jc9BYGv4xQ==
-  dependencies:
-    react "^16.8.6"
 
 use@^3.1.0:
   version "3.1.1"
